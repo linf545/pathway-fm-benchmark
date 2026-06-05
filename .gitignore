@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Environments
+.conda/
+.venv/
+venv/
+envs/
+
+# Data: do not commit licensed or large files
+raw_data/
+data/
+qc/
+embeddings/
+models_raw/
+checkpoints/
+outputs/
+results/
+
+# Large arrays / model artifacts
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.pkl
+*.joblib
+*.parquet
+*.feather
+
+# Logs
+*.log
+slurm-*.out
+
+# System
+.DS_Store
+Thumbs.db

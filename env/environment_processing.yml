@@ -1,0 +1,29 @@
+name: plantfm_data
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pandas>=2.0
+  - numpy
+  - scipy
+  - scikit-learn
+  - rdkit
+  - openpyxl
+  - xlrd
+  - pyarrow
+  - fastparquet
+  - tqdm
+  - requests
+  - beautifulsoup4
+  - lxml
+  - pyyaml
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - ipykernel
+  - pip
+  - pip:
+      - pubchempy
+      - iterative-stratification
