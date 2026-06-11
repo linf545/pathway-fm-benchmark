@@ -1,0 +1,32 @@
+name: plantfm_model
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pandas>=2.0
+  - numpy
+  - scipy
+  - scikit-learn
+  - rdkit
+  - tqdm
+  - pyyaml
+  - matplotlib
+  - ipykernel
+  - pytorch
+  - pytorch-cuda=12.1
+  - pip
+  - pip:
+      - transformers
+      - huggingface_hub
+      - datasets
+      - accelerate
+      - evaluate
+      - peft
+      - tokenizers
+      - safetensors
+      - xgboost
+      - joblib

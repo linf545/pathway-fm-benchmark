@@ -1,0 +1,9 @@
+model	env_name	model_or_repo_path	status	notes
+ChemBERTa-77M-MLM	plantfm_chemberta_hf	/private/vina/model_repos/ChemBERTa-77M-MLM	PASSED	local HF model
+ChemBERTa-100M-MLM	plantfm_chemberta_hf	/private/vina/model_repos/ChemBERTa-100M-MLM	PASSED	DeepChem ChemBERTa3 family model; embedding dim 768
+MoLFormer-c3-1.1B	plantfm_chemberta_hf	/private/vina/model_repos/MoLFormer-c3-1.1B	PASSED	DeepChem c3-MoLFormer model; embedding dim 768
+NaFM	plantfm_nafm	/private/vina/model_repos/NaFM/NaFM-Official	PASSED	PretrainedGNN checkpoint load and forward pass passed
+MolCLR-GCN	plantfm_molclr	/private/vina/model_repos/MolCLR	PASSED	pretrained GCN checkpoint load passed
+MolCLR-GIN	plantfm_molclr	/private/vina/model_repos/MolCLR	PASSED	pretrained GIN checkpoint load passed
+chemberta3-code	NA	/private/vina/model_repos/chemberta3	CODE_ONLY	source repo, not a model checkpoint directory
+IBM-MoLFormer-local	NA	/private/vina/model_repos/molformer	HOLD	local repo lacks confirmed pretrained checkpoint
