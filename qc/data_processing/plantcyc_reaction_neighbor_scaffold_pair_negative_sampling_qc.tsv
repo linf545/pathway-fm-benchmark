@@ -1,0 +1,4 @@
+split_scheme	split	positive_pairs	unique_compounds_in_split	target_random_negatives	made_random_negatives	target_hard_negatives	made_hard_negatives	total_rows_expected_if_full
+scaffold_pair	scaffold_test	618	965	618	618	1236	1236	2472
+scaffold_pair	scaffold_train	4947	3447	4947	4947	9894	9894	19788
+scaffold_pair	scaffold_val	619	962	619	619	1238	1238	2476

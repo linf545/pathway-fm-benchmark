@@ -1,0 +1,38 @@
+Bao compound master QC
+======================
+
+Total dataset-specific rows: 86,211
+Unique compounds across A/B/C/D: 84,331
+
+Rows by dataset:
+bao_dataset
+D_npclassifier     78332
+C_kegg              5288
+A_trainval          2014
+B_external_test      577
+Name: count, dtype: int64
+
+Unique compounds by dataset:
+A_trainval: 2,014
+B_external_test: 577
+C_kegg: 5,288
+D_npclassifier: 78,332
+
+Dataset-overlap patterns:
+bao_dataset
+D_npclassifier                                      77094
+C_kegg                                               3872
+A_trainval                                           1332
+C_kegg|D_npclassifier                                 934
+B_external_test                                       335
+A_trainval|C_kegg                                     263
+A_trainval|C_kegg|D_npclassifier                      148
+A_trainval|B_external_test                            143
+A_trainval|D_npclassifier                             111
+B_external_test|C_kegg                                 42
+B_external_test|D_npclassifier                         25
+B_external_test|C_kegg|D_npclassifier                  15
+A_trainval|B_external_test|C_kegg                      12
+A_trainval|B_external_test|D_npclassifier               3
+A_trainval|B_external_test|C_kegg|D_npclassifier        2
+Name: count, dtype: int64

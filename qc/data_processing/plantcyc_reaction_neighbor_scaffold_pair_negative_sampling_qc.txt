@@ -1,0 +1,45 @@
+PlantCyc reaction-neighbor negative sampling QC: scaffold_pair
+======================================================================
+
+Sampling settings:
+RANDOM_NEG_PER_POS: 1
+HARD_NEG_PER_POS: 2
+
+Rows by label:
+label
+0    18552
+1     6184
+Name: count, dtype: int64
+
+Rows by split and label:
+split           label
+scaffold_test   0         1854
+                1          618
+scaffold_train  0        14841
+                1         4947
+scaffold_val    0         1857
+                1          619
+dtype: int64
+
+Rows by negative_type:
+negative_type
+hard_negative      12368
+positive            6184
+random_negative     6184
+Name: count, dtype: int64
+
+Rows by negative_subtype:
+negative_subtype
+hard_same_pathway           12325
+positive                     6184
+random_different_pathway     6184
+hard_same_scaffold             43
+Name: count, dtype: int64
+
+Per-split sampling QC:
+    split_scheme           split  positive_pairs  ...  target_hard_negatives  made_hard_negatives  total_rows_expected_if_full
+0  scaffold_pair   scaffold_test             618  ...                   1236                 1236                         2472
+1  scaffold_pair  scaffold_train            4947  ...                   9894                 9894                        19788
+2  scaffold_pair    scaffold_val             619  ...                   1238                 1238                         2476
+
+[3 rows x 9 columns]

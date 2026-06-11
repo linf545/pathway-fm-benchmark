@@ -1,0 +1,29 @@
+Bao A/B overlap check
+=====================
+
+A compounds: 2,014
+B compounds: 577
+Overlapping compounds by dedup_key: 160
+
+Overlap key type counts:
+dedup_key_type_A
+inchikey    160
+Name: count, dtype: int64
+
+Canonical SMILES identical:
+canonical_smiles_identical
+1    153
+0      7
+Name: count, dtype: int64
+
+InChIKey identical:
+inchikey_identical
+1    160
+Name: count, dtype: int64
+
+Re-normalized original SMILES identical:
+renormalized_original_smiles_identical
+1    153
+0      7
+Name: count, dtype: int64
+

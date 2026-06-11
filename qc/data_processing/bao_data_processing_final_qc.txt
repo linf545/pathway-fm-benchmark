@@ -1,0 +1,38 @@
+Bao data-processing final QC
+============================
+
+Task table split counts:
+split
+train            1630
+external_test     417
+val               384
+Name: count, dtype: int64
+
+Scaffold split counts:
+scaffold_split
+scaffold_train    1594
+scaffold_val       420
+external_test      417
+Name: count, dtype: int64
+
+Task rows: 2431
+Metadata rows: 2431
+Labels shape: (2431, 18)
+Morgan r2 shape: (2431, 2048)
+Morgan r3 shape: (2431, 2048)
+RDKit descriptor shape: (2431, 218)
+Bao master unique compounds: 84331
+
+File checksums:
+data/tasks/bao_plant_pathway/bao_plant_pathway_task.tsv	868145	9bc59cee11c13d839300343b3d5870a7
+data/tasks/bao_plant_pathway/bao_plant_pathway_labels.tsv	1390	70e39533ab9b18acd12e1c3e28db0a22
+data/tasks/bao_plant_pathway/bao_plant_pathway_splits.tsv	461334	bfdd74f3af2573b75d5628dd875ff1eb
+data/splits/bao_plant_pathway/scaffold_split.tsv	498751	1af9b835feb1f15cdcd869022a3303ad
+data/master/compounds_master_bao.tsv	25642590	7c4d99dc1ac3d6469752c00a3313e02b
+data/master/bao_compound_source_crosswalk.tsv	19020098	3ce87de662607e162bf97e3f58efe7e6
+data/features/bao_plant_pathway/metadata.tsv	580256	67cc5b1f4ffb2fd6119ed5e3f3245606
+data/features/bao_plant_pathway/labels.npy	350192	4e1f4ae970d64be8db98b99a344f7336
+data/features/bao_plant_pathway/label_columns.txt	730	e6490d511adb0ec57ad8c56b2be53543
+data/features/bao_plant_pathway/morgan_r2_2048.npz	110069	b090eca6dc05ef2c0be3fe11ab61255e
+data/features/bao_plant_pathway/morgan_r3_2048.npz	175264	c82429916fa1a67be5f43d87a80cb872
+data/features/bao_plant_pathway/rdkit_descriptors.tsv	4365935	99038a0bd80d911a4c971d9213a9cb2b

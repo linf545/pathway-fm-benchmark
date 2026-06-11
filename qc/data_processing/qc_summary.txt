@@ -1,0 +1,276 @@
+
+================================================================================
+Bao dataset: A_trainval
+================================================================================
+valid compounds: 2,014
+unique InChIKeys: 2,014
+unique canonical SMILES: 2,014
+compounds with labels: 2,014
+long label rows: 2,317
+label counts:
+label_class
+0      34
+1      35
+10     45
+11     90
+12     19
+13      9
+14     64
+15     12
+16     35
+17     38
+2     134
+3     525
+4     661
+5      34
+6      12
+7      84
+8      34
+9     452
+Name: count, dtype: int64
+
+pathway counts:
+pathway_name
+Phenylpropanoid Derivative Biosynthesis                661
+Nitrogen-Containing Secondary Compound Biosynthesis    525
+Terpenoid Biosynthesis                                 452
+Hormone Biosynthesis                                   134
+Toxin Biosynthesis                                      90
+Sugar Derivative Biosynthesis                           84
+Nitrogen Containing Secondary Compound Degradation      64
+Terpenophenolic Biosynthesis                            45
+Terpenoid Degradation                                   38
+Sugar Derivative Degradation                            35
+Fatty Acid Derivative Biosynthesis                      35
+Aroma Compound Biosynthesis                             34
+Sulfur-Containing Secondary Compound Biosynthesis       34
+Polyketide Biosynthesis                                 34
+Xanthone Biosynthesis                                   19
+Phenylpropanoid Derivative Degradation                  12
+Siderophore and Metallophore Biosynthesis               12
+Flavonoid Degradation                                    9
+Name: count, dtype: int64
+invalid SMILES rows: 1
+
+================================================================================
+Bao dataset: B_external_test
+================================================================================
+valid compounds: 577
+unique InChIKeys: 577
+unique canonical SMILES: 577
+compounds with labels: 577
+long label rows: 695
+label counts:
+label_class
+0      11
+1       9
+10      4
+11     15
+12      2
+13      4
+14      9
+15      1
+16      8
+17      2
+2      63
+3     187
+4     189
+5      11
+6       5
+7      42
+8      20
+9     113
+Name: count, dtype: int64
+
+pathway counts:
+pathway_name
+Phenylpropanoid Derivative Biosynthesis                189
+Nitrogen-Containing Secondary Compound Biosynthesis    187
+Terpenoid Biosynthesis                                 113
+Hormone Biosynthesis                                    63
+Sugar Derivative Biosynthesis                           42
+Sulfur-Containing Secondary Compound Biosynthesis       20
+Toxin Biosynthesis                                      15
+Aroma Compound Biosynthesis                             11
+Polyketide Biosynthesis                                 11
+Nitrogen Containing Secondary Compound Degradation       9
+Fatty Acid Derivative Biosynthesis                       9
+Sugar Derivative Degradation                             8
+Siderophore and Metallophore Biosynthesis                5
+Terpenophenolic Biosynthesis                             4
+Flavonoid Degradation                                    4
+Xanthone Biosynthesis                                    2
+Terpenoid Degradation                                    2
+Phenylpropanoid Derivative Degradation                   1
+Name: count, dtype: int64
+invalid SMILES rows: 0
+
+================================================================================
+Bao dataset: C_kegg
+================================================================================
+valid compounds: 5,288
+unique InChIKeys: 5,288
+unique canonical SMILES: 5,288
+compounds with labels: 5,288
+long label rows: 5,995
+label counts:
+label_class
+0      475
+1      178
+10     957
+2      547
+3      150
+4      542
+5      236
+6      191
+7      372
+8      986
+9     1361
+Name: count, dtype: int64
+
+pathway counts:
+pathway_name
+Biosynthesis of other secondary metabolites    1361
+Metabolism of terpenoids and polyketides        986
+Xenobiotics biodegradation and metabolism       957
+Lipid metabolism                                547
+Amino acid metabolism                           542
+Carbohydrate metabolism                         475
+Metabolism of cofactors and vitamins            372
+Metabolism of other amino acids                 236
+Glycan biosynthesis and metabolism              191
+Energy metabolism                               178
+Nucleotide metabolism                           150
+Name: count, dtype: int64
+invalid SMILES rows: 0
+
+================================================================================
+Bao dataset: D_npclassifier
+================================================================================
+valid compounds: 78,332
+unique InChIKeys: 78,332
+unique canonical SMILES: 78,332
+compounds with labels: 78,332
+long label rows: 78,336
+label counts:
+label_class
+1     8558
+2     4028
+3      953
+4    24213
+5     7688
+6     9876
+7    23020
+Name: count, dtype: int64
+
+pathway counts:
+pathway_name
+Fatty acids                        24213
+Terpenoids                         23020
+Shikimates and phenylpropanoids     9876
+Alkaloids                           8558
+Polyketides                         7688
+Amino acids and peptides            4028
+Carbohydrates                        953
+Name: count, dtype: int64
+invalid SMILES rows: 0
+
+================================================================================
+PlantCyc
+================================================================================
+plant compounds: 9,408
+compounds with SMILES: 8,094
+compounds with pathway_ids: 3,710
+
+Top pathway names from compounds:
+pathway_names
+vindoline, vindorosine and vinblastine biosynthesis                  48
+Amaryllidacea alkaloids biosynthesis                                 43
+aliphatic glucosinolate biosynthesis, side chain elongation cycle    40
+glucosinolate biosynthesis from dihomomethionine                     39
+phytosterol biosynthesis (plants)                                    37
+suberin monomers biosynthesis                                        37
+ajmaline and sarpagine biosynthesis                                  37
+tetrahydrofolate biosynthesis II                                     34
+glucosinolate biosynthesis from homomethionine                       34
+Organic Nitrogen Assimilation                                        34
+sporopollenin precursors biosynthesis                                33
+paclitaxel biosynthesis                                              33
+jasmonic acid biosynthesis                                           33
+α-tomatine biosynthesis                                              31
+glucosinolate biosynthesis from tryptophan                           31
+secologanin and strictosidine biosynthesis                           31
+brassinolide biosynthesis I                                          31
+tropane alkaloids biosynthesis                                       30
+sphingolipid biosynthesis (plants)                                   30
+glycolipid desaturation                                              30
+hydroxylated fatty acid biosynthesis (plants)                        30
+hypoglycin biosynthesis                                              29
+flavonoid di-C-glucosylation                                         29
+monolignol biosynthesis                                              28
+glucosinolate biosynthesis from trihomomethionine                    28
+coumarins biosynthesis (engineered)                                  28
+simplecoumarins biosynthesis                                         28
+plant sterol biosynthesis II                                         28
+brassinolide biosynthesis II                                         27
+L-arginine biosynthesis II (acetyl cycle)                            27
+Name: count, dtype: int64
+
+reaction pairs: 12,539
+reaction pairs with both SMILES: 9,607
+
+Top high-degree compounds in reaction pairs:
+Red-NADPH-Hemoprotein-Reductases    968
+Ox-NADPH-Hemoprotein-Reductases     957
+Donor-H2                            396
+Acceptor                            380
+2-KETOGLUTARATE                     356
+CPD-12575                           314
+ADENOSYL-HOMO-CYS                   279
+GLT                                 260
+SUC                                 195
+FERRICYTOCHROME-B5                  185
+FERROCYTOCHROME-B5                  185
+Reduced-ferredoxins                 177
+Oxidized-ferredoxins                168
+Glucopyranose                       164
+PYRUVATE                            150
+NADH-P-OR-NOP                       147
+NAD-P-OR-NOP                        146
+AMMONIUM                            119
+MALONYL-COA                         104
+ACETYL-COA                          104
+FARNESYL-PP                         103
+L-ALPHA-ALANINE                      89
+GLUTATHIONE                          86
+GLY                                  65
+ACP                                  64
+MET                                  60
+PAPS                                 60
+GLN                                  59
+3-5-ADP                              59
+P-COUMAROYL-COA                      54
+CYS                                  51
+CPD-4211                             46
+ACET                                 45
+FORMATE                              43
+Amino-Acids-20                       42
+PHE                                  42
+2-Oxo-carboxylates                   40
+SER                                  40
+DIACYLGLYCEROL                       40
+THF-GLU-N                            38
+GERANYL-PP                           37
+MYO-INOSITOL                         36
+Demethylated-methyl-acceptors        36
+INDOLE_ACETATE_AUXIN                 35
+OXALACETIC_ACID                      34
+ASCORBATE                            34
+GLYOX                                34
+CPD-479                              33
+PHENYL-PYRUVATE                      33
+TYR                                  33
+Name: count, dtype: int64
+
+pathways: 1,162
+reactions: 5,492

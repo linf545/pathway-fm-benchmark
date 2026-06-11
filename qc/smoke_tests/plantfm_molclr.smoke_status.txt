@@ -1,0 +1,32 @@
+plantfm_molclr smoke status
+
+Status: PASSED
+
+Model:
+- MolCLR
+- Repo: /private/vina/model_repos/MolCLR
+- Env: plantfm_molclr
+
+Environment strategy:
+- Modern CUDA-compatible stack.
+- CUDA PyTorch installed first.
+- Installed pytorch-scatter and pytorch-sparse from pyg channel.
+- Installed torch-geometric Python package separately.
+- Did not install conda package "pyg" because it pulled cpuonly and broke CUDA PyTorch.
+
+Checkpoints:
+- ckpt/pretrained_gcn/checkpoints/model.pth
+- ckpt/pretrained_gin/checkpoints/model.pth
+
+Passed:
+- torch import
+- torch_geometric import
+- torch_sparse import
+- torch_scatter import
+- rdkit import
+- GCN import
+- GINet import
+- checkpoint load into GCN/GINet
+
+Conclusion:
+- MolCLR environment and checkpoints are usable for benchmark smoke testing.

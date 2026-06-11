@@ -1,0 +1,37 @@
+plantfm_nafm smoke status
+
+Status: PASSED
+
+Environment:
+- Model: NaFM
+- Conda env: plantfm_nafm
+- Torch: 2.4.1
+- CUDA build: 12.1
+- torch_scatter: 2.1.2
+- torch_sparse: not installed; not required for current NaFM smoke test
+
+Checkpoint:
+- Path: /private/vina/model_repos/NaFM/NaFM-Official/NaFM.ckpt
+- Lightning checkpoint version: 1.7.7
+- epoch: 299
+- global_step: 363900
+
+Loaded target:
+- gnn.models.gnn.PretrainedGNN
+- num_layer: 6
+- emb_dim: 1024
+- feat_dim: 512
+- gnn_type: gin
+- drop_ratio: 0.1
+
+Checkpoint loading:
+- missing keys: 0
+- unexpected keys: 0
+
+Forward smoke test:
+- graph_emb shape: (1, 256)
+- node_emb shape: (2, 1024)
+
+Conclusion:
+- NaFM environment and checkpoint are usable.
+- Do not install additional PyG packages unless a later task explicitly requires them.

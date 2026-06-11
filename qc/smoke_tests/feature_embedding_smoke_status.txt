@@ -1,0 +1,20 @@
+feature embedding smoke status
+
+Status: PASSED
+
+Input:
+- /private/vina/FM_bench/data/features/bao_plant_pathway/smoke/bao_20_compounds.tsv
+- n_compounds: 20
+
+Passed models:
+- ChemBERTa-100M-MLM: embedding shape (20, 768), nan=0
+- ChemBERTa-77M-MLM: embedding shape (20, 384), nan=0
+- MoLFormer-c3-1.1B: embedding shape (20, 768), nan=0
+- MolCLR-GCN: embedding shape (20, 512), nan=0
+- MolCLR-GIN: embedding shape (20, 512), nan=0
+- NaFM-contrast: embedding shape (20, 256), nan=0
+- NaFM-graph-mean: embedding shape (20, 1024), nan=0
+
+Conclusion:
+- All selected foundation-model embedding pipelines passed on real BAO SMILES.
+- Ready for full embedding extraction on compounds_master_bao.tsv.

@@ -1,0 +1,23 @@
+plantfm_molformer_c3_1_1b smoke status
+
+Status: PASSED
+
+Model:
+- MoLFormer-c3-1.1B
+- Model path: /private/vina/model_repos/MoLFormer-c3-1.1B
+- Env: plantfm_chemberta_hf
+
+Passed:
+- tokenizer load
+- model load with trust_remote_code=True
+- SMILES tokenization
+- forward pass
+- hidden-state embedding extraction
+
+Output:
+- hidden shape: (3, 23, 768)
+- embedding shape: (3, 768)
+
+Notes:
+- Remote model/tokenizer code was loaded through HuggingFace trust_remote_code.
+- For final reproducibility, record model revision if possible.

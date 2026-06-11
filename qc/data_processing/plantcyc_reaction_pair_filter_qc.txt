@@ -1,0 +1,94 @@
+PlantCyc reaction-pair filtering QC
+===================================
+
+Input pairs with both SMILES: 9,607
+Excluded compounds: 30
+Removed pairs: 2,536
+Kept pairs before dedup: 7,071
+Kept pairs after dedup: 7,071
+
+Top high-degree compounds:
+                        compound_id  degree
+109                 2-KETOGLUTARATE     351
+38                        CPD-12575     314
+322               ADENOSYL-HOMO-CYS     277
+149                             GLT     253
+26                         Donor-H2     203
+205                             SUC     194
+309                   Glucopyranose     159
+253                        PYRUVATE     147
+133                    NAD-P-OR-NOP     144
+131                   NADH-P-OR-NOP     144
+171                        AMMONIUM     117
+115                     FARNESYL-PP     103
+2                        ACETYL-COA      99
+74                      MALONYL-COA      98
+255                 L-ALPHA-ALANINE      88
+64                      GLUTATHIONE      74
+341                             GLY      64
+933                            PAPS      59
+3466                        3-5-ADP      57
+252                             GLN      56
+65                              MET      53
+43                  P-COUMAROYL-COA      53
+78                              CYS      49
+999                            ACET      45
+139                        CPD-4211      44
+576                  Amino-Acids-20      42
+578              2-Oxo-carboxylates      40
+58                              PHE      40
+1666                            SER      39
+119                  DIACYLGLYCEROL      38
+478                       THF-GLU-N      38
+67                       GERANYL-PP      37
+1566  Demethylated-methyl-acceptors      36
+151                    MYO-INOSITOL      35
+361            INDOLE_ACETATE_AUXIN      34
+695                 OXALACETIC_ACID      34
+1027                        FORMATE      34
+507                         CPD-479      33
+608                           GLYOX      33
+1779                PHENYL-PYRUVATE      33
+403                         SUCROSE      32
+263                       CPD-14553      32
+347                             GAP      32
+103                  UDP-L-RHAMNOSE      32
+352                     L-ASPARTATE      31
+32                        ASCORBATE      31
+256                             TYR      31
+1542                            TRP      30
+204                    ETR-Quinones      29
+206                     ETR-Quinols      29
+
+Top excluded compounds:
+                                 compound_id  degree                                     exclude_reason
+5                            2-KETOGLUTARATE     351      high_degree_ge_150|manual_currency_or_generic
+2                                  CPD-12575     314                                 high_degree_ge_150
+13                         ADENOSYL-HOMO-CYS     277      high_degree_ge_150|manual_currency_or_generic
+8                                        GLT     253      high_degree_ge_150|manual_currency_or_generic
+1                                   Donor-H2     203  high_degree_ge_150|manual_currency_or_generic|...
+10                                       SUC     194      high_degree_ge_150|manual_currency_or_generic
+12                             Glucopyranose     159                                 high_degree_ge_150
+11                                  PYRUVATE     147                         manual_currency_or_generic
+7                               NAD-P-OR-NOP     144                         manual_currency_or_generic
+6                              NADH-P-OR-NOP     144                         manual_currency_or_generic
+9                                   AMMONIUM     117                         manual_currency_or_generic
+0                                 ACETYL-COA      99                         manual_currency_or_generic
+4                                MALONYL-COA      98                         manual_currency_or_generic
+3                                GLUTATHIONE      74                         manual_currency_or_generic
+20                                      PAPS      59                         manual_currency_or_generic
+27                                   3-5-ADP      57                         manual_currency_or_generic
+16                            Amino-Acids-20      42                         manual_currency_or_generic
+17                        2-Oxo-carboxylates      40                         manual_currency_or_generic
+21             Demethylated-methyl-acceptors      36        manual_currency_or_generic|pattern:Acceptor
+14               Methylated-methyl-acceptors      28                                   pattern:Acceptor
+25        Non-Glucosylated-Glucose-Acceptors      17                                   pattern:Acceptor
+15            Glucosylated-Glucose-Acceptors      16                                   pattern:Acceptor
+18                     Aminated-Amine-Donors       6                                      pattern:Donor
+23                   Deaminated-Amine-Donors       6                                      pattern:Donor
+29  Glucuronosylated-Glucuronoside-Acceptors       2                                   pattern:Acceptor
+28    Non-Galactosylated-Galactose-Acceptors       1                                   pattern:Acceptor
+22        Non-Glucur-Glucuronoside-Acceptors       1                                   pattern:Acceptor
+24          Non-Glycosylated-sugar-Acceptors       1                                   pattern:Acceptor
+19                           Phenolic-Donors       1                                      pattern:Donor
+26           Phenoxyl-rad-of-phenolic-donors       1                                      pattern:Donor

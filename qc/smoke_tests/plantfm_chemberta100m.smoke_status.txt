@@ -1,0 +1,22 @@
+plantfm_chemberta100m smoke status
+
+Status: PASSED
+
+Model:
+- ChemBERTa-100M-MLM
+- Model path: /private/vina/model_repos/ChemBERTa-100M-MLM
+- Env: plantfm_chemberta_hf
+
+Passed:
+- tokenizer load
+- model load
+- SMILES tokenization
+- forward pass
+- mean-pooled last_hidden_state embedding extraction
+
+Output:
+- last_hidden_state shape: (3, 15, 768)
+- embedding shape: (3, 768)
+
+Notes:
+- Roberta pooler warning is acceptable because embeddings are taken from mean-pooled last_hidden_state, not pooler_output.

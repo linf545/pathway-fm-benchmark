@@ -1,0 +1,247 @@
+PlantCyc positive reaction-neighbor split QC
+============================================
+
+Input filtered positive pairs: 6,184
+Unique directed compound pairs: 5,780
+Unique undirected compound pairs: 5,236
+Unique undirected scaffold-pair groups: 3,101
+
+Random split counts:
+random_split
+train    4947
+test      619
+val       618
+Name: count, dtype: int64
+
+Scaffold-pair split counts:
+scaffold_pair_split
+scaffold_train    4947
+scaffold_val       619
+scaffold_test      618
+Name: count, dtype: int64
+
+Pathway counts by random split:
+
+[train] n=4,947
+pathway_names
+UNKNOWN                                                              1114
+aliphatic glucosinolate biosynthesis, side chain elongation cycle      38
+protein N-glycosylation initial phase (eukaryotic)                     35
+Calvin-Benson-Bassham cycle                                            30
+vindoline, vindorosine and vinblastine biosynthesis                    27
+Rubisco shunt                                                          26
+glycolipid desaturation                                                24
+ajmaline and sarpagine biosynthesis                                    22
+phytosterol biosynthesis (plants)                                      22
+suberin monomers biosynthesis                                          22
+Amaryllidacea alkaloids biosynthesis                                   22
+cyanidin diglucoside biosynthesis (acyl-glucose dependent)             21
+brassinolide biosynthesis I                                            20
+pentose phosphate pathway (non-oxidative branch) I                     20
+gluconeogenesis I                                                      20
+carotenoid cleavage                                                    19
+glycolysis I (from glucose 6-phosphate)                                19
+glucosinolate biosynthesis from dihomomethionine                       19
+morphine biosynthesis                                                  18
+simplecoumarins biosynthesis                                           18
+phospholipid desaturation                                              17
+paclitaxel biosynthesis                                                17
+glycolysis II (from fructose 6-phosphate)                              17
+cardenolide glucosides biosynthesis                                    17
+monolignol biosynthesis                                                17
+tropane alkaloids biosynthesis                                         17
+robustaquinone biosynthesis                                            16
+plant sterol biosynthesis II                                           16
+glucosinolate biosynthesis from homomethionine                         16
+hypoglycin biosynthesis                                                16
+Name: count, dtype: int64
+
+[val] n=618
+pathway_names
+UNKNOWN                                                                133
+carotenoid cleavage                                                      5
+protein N-glycosylation initial phase (eukaryotic)                       5
+vindoline, vindorosine and vinblastine biosynthesis                      5
+ajmaline and sarpagine biosynthesis                                      5
+phospholipid desaturation                                                4
+jasmonic acid biosynthesis                                               4
+crotonyl-CoA/ethylmalonyl-CoA/hydroxybutyryl-CoA cycle (engineered)      4
+gallate biosynthesis                                                     3
+glucosinolate biosynthesis from dihomomethionine                         3
+cutin biosynthesis                                                       3
+glycine biosynthesis                                                     3
+cyanidin diglucoside biosynthesis (acyl-glucose dependent)               3
+acylsucrose biosynthesis (Solanum pennellii)                             3
+ginsenosides biosynthesis                                                3
+NAD salvage (plants)                                                     3
+stachyose biosynthesis                                                   3
+menthol biosynthesis                                                     3
+Calvin-Benson-Bassham cycle                                              3
+heliocides biosynthesis                                                  3
+volatile esters biosynthesis (during fruit ripening)                     3
+sanguinarine and macarpine biosynthesis                                  3
+Amaryllidacea alkaloids biosynthesis                                     3
+flavonol acylglucoside biosynthesis III - quercetin derivatives          3
+pentose phosphate pathway (non-oxidative branch) I                       3
+phytosterol biosynthesis (plants)                                        3
+Organic Nitrogen Assimilation                                            3
+aliphatic glucosinolate biosynthesis, side chain elongation cycle        3
+Rubisco shunt                                                            3
+nitrogen remobilization from senescing leaves                            2
+Name: count, dtype: int64
+
+[test] n=619
+pathway_names
+UNKNOWN                                                                           145
+aliphatic glucosinolate biosynthesis, side chain elongation cycle                   7
+Rubisco shunt                                                                       6
+pentose phosphate pathway (non-oxidative branch) I                                  5
+Calvin-Benson-Bassham cycle                                                         5
+indole-3-acetate inactivation VIII                                                  4
+glycerolipid acyl chain desaturation (Chlamydomonas)                                4
+protein N-glycosylation initial phase (eukaryotic)                                  4
+glucosinolate biosynthesis from homomethionine                                      4
+isovitexin glycosides biosynthesis                                                  3
+tropane alkaloids biosynthesis                                                      3
+noscapine biosynthesis                                                              3
+L-ornithine biosynthesis I                                                          3
+plant sterol biosynthesis II                                                        3
+stachyose degradation                                                               3
+brassinolide biosynthesis I                                                         3
+L-arginine biosynthesis II (acetyl cycle)                                           3
+monolignol biosynthesis                                                             3
+glucosinolate biosynthesis from phenylalanine                                       3
+polymethylated myricetin biosynthesis (tomato)                                      3
+secologanin and strictosidine biosynthesis                                          3
+glucosinolate biosynthesis from tryptophan                                          3
+paclitaxel biosynthesis                                                             3
+α-solanine/α-chaconine biosynthesis                                                 3
+violdelphin biosynthesis                                                            3
+alliin metabolism                                                                   3
+flavonol acylglucoside biosynthesis II - isorhamnetin derivatives                   3
+simplecoumarins biosynthesis                                                        3
+spermidine hydroxycinnamic acid conjugates biosynthesis                             2
+superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)      2
+Name: count, dtype: int64
+
+Pathway counts by scaffold-pair split:
+
+[scaffold_train] n=4,947
+pathway_names
+UNKNOWN                                                                1117
+aliphatic glucosinolate biosynthesis, side chain elongation cycle        44
+Calvin-Benson-Bassham cycle                                              37
+Rubisco shunt                                                            35
+glycolipid desaturation                                                  28
+pentose phosphate pathway (non-oxidative branch) I                       28
+phytosterol biosynthesis (plants)                                        27
+cyanidin diglucoside biosynthesis (acyl-glucose dependent)               26
+protein N-glycosylation initial phase (eukaryotic)                       26
+brassinolide biosynthesis I                                              22
+vindoline, vindorosine and vinblastine biosynthesis                      22
+monolignol biosynthesis                                                  22
+carotenoid cleavage                                                      21
+gluconeogenesis I                                                        21
+simplecoumarins biosynthesis                                             20
+anthocyanidin acylglucoside and acylsambubioside biosynthesis            20
+suberin monomers biosynthesis                                            20
+ajmaline and sarpagine biosynthesis                                      20
+crotonyl-CoA/ethylmalonyl-CoA/hydroxybutyryl-CoA cycle (engineered)      20
+glycolysis I (from glucose 6-phosphate)                                  20
+robustaquinone biosynthesis                                              19
+polymethylated myricetin biosynthesis (tomato)                           18
+L-arginine biosynthesis II (acetyl cycle)                                18
+heliocides biosynthesis                                                  18
+glycolysis IV                                                            18
+glycolysis II (from fructose 6-phosphate)                                18
+indole glucosinolate activation (intact plant cell)                      18
+cardenolide glucosides biosynthesis                                      17
+photorespiration I                                                       17
+indole-3-acetate inactivation VIII                                       17
+Name: count, dtype: int64
+
+[scaffold_val] n=619
+pathway_names
+UNKNOWN                                                                            130
+protein N-glycosylation initial phase (eukaryotic)                                   8
+phospholipid desaturation                                                            8
+glucosinolate biosynthesis from dihomomethionine                                     8
+seleno-amino acid biosynthesis (plants)                                              5
+canavanine biosynthesis                                                              5
+ajmaline and sarpagine biosynthesis                                                  5
+vindoline, vindorosine and vinblastine biosynthesis                                  5
+isovitexin glycosides biosynthesis                                                   4
+Amaryllidacea alkaloids biosynthesis                                                 4
+secologanin and strictosidine biosynthesis                                           4
+traumatin and (Z)-3-hexen-1-yl acetate biosynthesis                                  4
+selenate reduction                                                                   4
+piperine biosynthesis                                                                4
+trans-lycopene biosynthesis II (oxygenic phototrophs and green sulfur bacteria)      4
+betacyanin biosynthesis                                                              4
+felinine and 3-methyl-3-sulfanylbutan-1-ol biosynthesis                              4
+gallotannin biosynthesis                                                             4
+saponin biosynthesis II                                                              4
+phytocassanes biosynthesis, shared reactions                                         4
+seleno-amino acid detoxification and volatilization II                               4
+detoxification of reactive carbonyls in chloroplasts                                 3
+S-methyl-5-thio-α-D-ribose 1-phosphate degradation I                                 3
+paclitaxel biosynthesis                                                              3
+ginsenosides biosynthesis                                                            3
+carotenoid cleavage                                                                  3
+quercetin glycoside biosynthesis (Arabidopsis)                                       3
+justicidin B biosynthesis                                                            3
+maysin biosynthesis                                                                  3
+noscapine biosynthesis                                                               3
+Name: count, dtype: int64
+
+[scaffold_test] n=618
+pathway_names
+UNKNOWN                                                145
+protein N-glycosylation initial phase (eukaryotic)      10
+Amaryllidacea alkaloids biosynthesis                     9
+vindoline, vindorosine and vinblastine biosynthesis      7
+jasmonic acid biosynthesis                               6
+glucosinolate biosynthesis from dihomomethionine         6
+heliannuol and heliespirone biosynthesis                 6
+morphine biosynthesis                                    5
+glucosinolate biosynthesis from hexahomomethionine       5
+glucosinolate biosynthesis from pentahomomethionine      5
+phospholipid desaturation                                5
+α-tomatine biosynthesis                                  5
+traumatin and (Z)-3-hexen-1-yl acetate biosynthesis      5
+cutin biosynthesis                                       5
+alliin metabolism                                        5
+nicotine biosynthesis                                    4
+glucosinolate biosynthesis from homomethionine           4
+saponin biosynthesis II                                  4
+violdelphin biosynthesis                                 4
+L-ascorbate degradation III                              4
+paclitaxel biosynthesis                                  4
+fructan biosynthesis                                     4
+linamarin biosynthesis                                   4
+Organic Nitrogen Assimilation                            4
+secologanin and strictosidine biosynthesis               4
+(3E)-4,8-dimethylnona-1,3,7-triene biosynthesis I        4
+superpathway of nicotine biosynthesis                    4
+β-pyrazole-1-ylalanine biosynthesis                      4
+sesamin biosynthesis                                     3
+digitoxigenin biosynthesis                               3
+Name: count, dtype: int64
+
+Random split scaffold-pair leakage:
+  split_a split_b                       key_col  overlap_count
+0    test   train  undirected_scaffold_pair_key            267
+1    test     val  undirected_scaffold_pair_key             82
+2   train     val  undirected_scaffold_pair_key            267
+
+Scaffold-pair split scaffold-pair leakage:
+          split_a         split_b                       key_col  overlap_count
+0   scaffold_test  scaffold_train  undirected_scaffold_pair_key              0
+1   scaffold_test    scaffold_val  undirected_scaffold_pair_key              0
+2  scaffold_train    scaffold_val  undirected_scaffold_pair_key              0
+
+Scaffold-pair split compound-pair leakage:
+          split_a         split_b                       key_col  overlap_count
+0   scaffold_test  scaffold_train  undirected_compound_pair_key              0
+1   scaffold_test    scaffold_val  undirected_compound_pair_key              0
+2  scaffold_train    scaffold_val  undirected_compound_pair_key              0

@@ -1,0 +1,25 @@
+{
+  "task": "Bao plant pathway multilabel prediction",
+  "input": "canonical_smiles",
+  "labels": "18 plant pathway labels",
+  "random_split": "train/val from Bao Dataset A",
+  "external_test": "Bao Dataset B after removing A-overlapping compounds",
+  "scaffold_split": "scaffold_train/scaffold_val from Bao Dataset A",
+  "n_task_rows": 2431,
+  "label_shape": [
+    2431,
+    18
+  ],
+  "morgan_r2_shape": [
+    2431,
+    2048
+  ],
+  "morgan_r3_shape": [
+    2431,
+    2048
+  ],
+  "rdkit_descriptor_shape": [
+    2431,
+    218
+  ]
+}
