@@ -14,12 +14,9 @@ envs/
 # Data: do not commit licensed or large files
 raw_data/
 data/
-qc/
 embeddings/
 models_raw/
 checkpoints/
-outputs/
-results/
 
 # Large arrays / model artifacts
 *.npz
