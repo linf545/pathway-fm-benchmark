@@ -5,5 +5,7 @@ MoLFormer-c3-1.1B	plantfm_chemberta_hf	/private/vina/model_repos/MoLFormer-c3-1.
 NaFM	plantfm_nafm	/private/vina/model_repos/NaFM/NaFM-Official	PASSED	PretrainedGNN checkpoint load and forward pass passed
 MolCLR-GCN	plantfm_molclr	/private/vina/model_repos/MolCLR	PASSED	pretrained GCN checkpoint load passed
 MolCLR-GIN	plantfm_molclr	/private/vina/model_repos/MolCLR	PASSED	pretrained GIN checkpoint load passed
-chemberta3-code	NA	/private/vina/model_repos/chemberta3	CODE_ONLY	source repo, not a model checkpoint directory
-IBM-MoLFormer-local	NA	/private/vina/model_repos/molformer	HOLD	local repo lacks confirmed pretrained checkpoint
+chemberta3-code		/private/vina/model_repos/chemberta3	CODE_ONLY	source repo, not a model checkpoint directory
+IBM-MoLFormer-local		/private/vina/model_repos/molformer	HOLD	local repo lacks confirmed pretrained checkpoint
+Mole-BERT-GIN	plantfm_molebert	/private/vina/model_repos/Mole-BERT	PASSED	Official Mole-BERT GIN checkpoint; strict checkpoint load and forward pass passed; 300-d last-layer mean-pooled graph embedding
+GraphMVP-GIN	plantfm_graphmvp	/private/vina/model_repos/GraphMVP	PASSED	Official standard GraphMVP simple-feature classification checkpoint; 5-layer GIN; strict checkpoint load and GPU forward pass passed; 300-d final-layer mean-pooled graph embedding

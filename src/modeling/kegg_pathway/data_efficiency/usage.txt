@@ -1,0 +1,12 @@
+
+#both
+conda activate plantfm_data
+cd /private/vina/FM_bench
+
+python src/modeling/kegg_pathway/data_efficiency/run_kegg_pathway_data_efficiency.py \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --sampling-seeds 0 1 2 3 4 \
+  --n-per-label 4 8 16 24 32 64 \
+  --skip-missing-fm \
+  2>&1 | tee logs/modeling/kegg_pathway_data_efficiency_repeated.log

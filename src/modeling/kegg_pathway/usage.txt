@@ -1,0 +1,9 @@
+conda activate plantfm_data
+cd /private/vina/FM_bench
+
+python src/modeling/kegg_pathway/run_kegg_pathway_full_ensemble.py \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --n-bits 2048 \
+  --skip-missing-fm \
+  2>&1 | tee logs/modeling/kegg_pathway_full_ensemble_repeated.log
