@@ -35,6 +35,14 @@ def load_dataset(folder, dataset_name):
 
 
 def make_label_matrix(comp, labels, mapping):
+    """
+    Build a multilabel matrix aligned to comp['task_compound_id'].
+
+    Critical rule:
+    internal_compound_id is only unique within each processed Bao dataset.
+    Therefore labels must be joined by (dataset_name, internal_compound_id),
+    not by internal_compound_id alone.
+    """
     mapping = mapping[["label_class", "pathway_name"]].astype(str).drop_duplicates()
     label_ids = sorted(mapping["label_class"].unique(), key=lambda x: int(x))
     name_map = dict(zip(mapping["label_class"], mapping["pathway_name"]))
@@ -44,19 +52,48 @@ def make_label_matrix(comp, labels, mapping):
         for lid in label_ids
     }
 
-    y = pd.DataFrame({"task_compound_id": comp["task_compound_id"]})
+    required_comp_cols = {"dataset_name", "internal_compound_id", "task_compound_id"}
+    required_label_cols = {"dataset_name", "internal_compound_id", "label_class"}
 
+    missing_comp = required_comp_cols - set(comp.columns)
+    missing_label = required_label_cols - set(labels.columns)
+
+    if missing_comp:
+        raise ValueError(f"comp is missing required columns: {sorted(missing_comp)}")
+    if missing_label:
+        raise ValueError(f"labels is missing required columns: {sorted(missing_label)}")
+
+    key = ["dataset_name", "internal_compound_id"]
+
+    # Fail fast if task IDs are not one-to-one for dataset-specific internal IDs.
+    dup_comp = comp.duplicated(key, keep=False)
+    if dup_comp.any():
+        bad = comp.loc[dup_comp, key + ["task_compound_id"]].sort_values(key)
+        raise ValueError(
+            "Duplicate (dataset_name, internal_compound_id) rows in compound table. "
+            f"Examples:\n{bad.head(20).to_string(index=False)}"
+        )
+
+    y = pd.DataFrame({"task_compound_id": comp["task_compound_id"]})
     for lid, col in label_cols.items():
         y[col] = 0
 
-    id_map = dict(zip(comp["internal_compound_id"], comp["task_compound_id"]))
+    comp_key = comp[key + ["task_compound_id"]].copy()
+    labels2 = labels.copy()
+    labels2["label_class"] = labels2["label_class"].astype(str)
 
-    labels = labels.copy()
-    labels["task_compound_id"] = labels["internal_compound_id"].map(id_map)
-    labels = labels.dropna(subset=["task_compound_id"])
+    labels2 = labels2.merge(
+        comp_key,
+        on=key,
+        how="inner",
+        validate="many_to_one",
+    )
 
     for lid, col in label_cols.items():
-        pos = labels.loc[labels["label_class"].astype(str) == str(lid), "task_compound_id"]
+        pos = labels2.loc[
+            labels2["label_class"].astype(str) == str(lid),
+            "task_compound_id",
+        ]
         y.loc[y["task_compound_id"].isin(pos), col] = 1
 
     return y, label_cols
@@ -156,9 +193,20 @@ def main():
     all_lab = pd.concat([a_lab, b_lab], ignore_index=True)
 
     y_all, label_cols = make_label_matrix(task_comp, all_lab, a_map)
-    task = task_comp.merge(y_all, on="task_compound_id", how="left")
-
+    task = task_comp.merge(y_all, on="task_compound_id", how="left",validate="one_to_one")
+    
     label_columns = list(label_cols.values())
+    
+    missing_label_rows = task[label_columns].isna().any(axis=1)
+    if missing_label_rows.any():
+        bad = task.loc[missing_label_rows, ["task_compound_id", "dataset_name", "internal_compound_id"]]
+        bad.to_csv(out_dir / "bao_plant_pathway_missing_label_rows.tsv", sep="\t", index=False)
+        raise ValueError(
+            f"Missing binary labels for {missing_label_rows.sum()} task rows. "
+            f"See {out_dir / 'bao_plant_pathway_missing_label_rows.tsv'}"
+        )
+        
+    
 
     keep_cols = [
         "task_compound_id",
@@ -185,6 +233,35 @@ def main():
 
     keep_cols = [c for c in keep_cols if c in task.columns]
     task = task[keep_cols]
+
+    # Fail-fast label consistency check:
+    # The number of positive binary label columns must match the number of labels
+    # encoded in label_classes for every row.
+    def _count_label_classes(x):
+        if pd.isna(x):
+            return 0
+        s = str(x).strip()
+        if s == "" or s.lower() in {"nan", "none", "[]"}:
+            return 0
+        return len([z for z in s.split("|") if z.strip() != ""])
+
+    parsed_cardinality = task["label_classes"].apply(_count_label_classes).astype(int)
+    matrix_cardinality = task[label_columns].astype(int).sum(axis=1).astype(int)
+
+    mismatch = task.loc[parsed_cardinality.ne(matrix_cardinality)].copy()
+    if len(mismatch) > 0:
+        mismatch["parsed_label_cardinality"] = parsed_cardinality.loc[mismatch.index].values
+        mismatch["matrix_label_cardinality"] = matrix_cardinality.loc[mismatch.index].values
+        mismatch.to_csv(
+            out_dir / "bao_plant_pathway_label_cardinality_mismatches.tsv",
+            sep="\t",
+            index=False,
+        )
+        raise ValueError(
+            f"Label matrix mismatch in {len(mismatch)} rows. "
+            f"See {out_dir / 'bao_plant_pathway_label_cardinality_mismatches.tsv'}"
+        )
+
 
     mapping_out = a_map[["label_class", "pathway_name"]].astype(str).drop_duplicates()
     mapping_out["label_column"] = mapping_out["label_class"].map(label_cols)
