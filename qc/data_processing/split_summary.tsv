@@ -1,0 +1,4 @@
+split_scheme	split_column	split_value	n_compounds	mean_label_cardinality	label_density	zero_label_compounds
+metadata_split	split	external_test	417	1.1390887290167866	0.06328270716759925	0
+metadata_split	split	train	1630	1.1263803680981594	0.06257668711656442	0
+metadata_split	split	val	384	1.1979166666666667	0.06655092592592593	0

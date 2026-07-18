@@ -1,0 +1,20 @@
+PlantCyc reaction-neighbor feature QC
+====================================
+metadata_file: data/features/plantcyc_reaction_neighbor/metadata.tsv
+metadata_sha256: fd19d9e84c48833442d8e91fa217c3c0353beaf5fa6497c1d9385f0e74240ad7
+n_compounds: 3970
+rdkit_version: 2026.03.3
+
+morgan_r2_shape: (3970, 2048)
+morgan_r2_nnz: 163341
+morgan_r3_shape: (3970, 2048)
+morgan_r3_nnz: 222719
+
+n_descriptor_columns: 217
+n_missing_descriptor_values: 577
+n_compounds_with_any_missing_descriptor: 51
+n_descriptor_columns_with_any_missing: 13
+n_all_missing_descriptor_columns: 0
+
+Descriptor missing values were retained.
+Imputation must be fitted on the training partition only during model training.

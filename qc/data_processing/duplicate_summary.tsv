@@ -1,0 +1,5 @@
+column	available	nonempty	unique_nonempty	duplicate_rows	duplicate_values
+task_compound_id	True	2431.0	2431.0	0.0	0.0
+inchikey	True	2431.0	2431.0	0.0	0.0
+canonical_smiles	True	2431.0	2431.0	0.0	0.0
+smiles	False				

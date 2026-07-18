@@ -1,0 +1,46 @@
+PlantCyc reaction-neighbor balanced-dataset QC
+========================================================================
+
+dataset_variant: mixed
+split_scheme: random
+positive:negative ratio: 1:1 within every split
+
+Rows by split and label:
+split  label
+test   0         523
+       1         523
+train  0        4177
+       1        4177
+val    0         522
+       1         522
+
+Rows by negative type:
+negative_type
+positive         5222
+easy_negative    2611
+hard_negative    2611
+
+Rows by negative subtype:
+negative_subtype
+positive                                           5222
+hard_same_pathway                                  2420
+easy_different_annotated_pathway                   1850
+easy_no_known_shared_pathway_missing_annotation     761
+hard_same_scaffold                                  191
+
+Per-split composition:
+dataset_variant split_scheme split  positive_pairs  easy_negatives  hard_negatives  total_negatives  total_rows
+          mixed       random train            4177            2089            2088             4177        8354
+          mixed       random   val             522             261             261              522        1044
+          mixed       random  test             523             261             262              523        1046
+
+Final integrity audit:
+n_rows: 10444
+n_positive: 5222
+n_negative: 5222
+n_easy_negative: 2611
+n_hard_negative: 2611
+n_unique_pairs: 10444
+n_cross_split_pairs: 0
+n_mixed_label_pairs: 0
+n_cross_split_scaffold_groups: 0

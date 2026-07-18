@@ -1,0 +1,20 @@
+{
+  "script_version": "plantcyc_reaction_neighbor_replicates_v1",
+  "base_positive_file": "data/tasks/plantcyc_reaction_neighbor/plantcyc_positive_pairs_with_splits.tsv",
+  "metadata_file": "data/features/plantcyc_reaction_neighbor/metadata.tsv",
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "positive_random_split_method": "pathway-stratified pair-level 80/10/10",
+  "positive_scaffold_split_method": "greedy undirected-scaffold-pair-group 80/10/10",
+  "negative_variants": [
+    "easy",
+    "hard",
+    "mixed"
+  ],
+  "negative_sampling_seed_equals_split_seed": true
+}

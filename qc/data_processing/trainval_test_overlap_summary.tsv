@@ -1,0 +1,3 @@
+split_scheme	split_column	id_column	trainval_unique	test_unique	overlap_count
+metadata_split	split	inchikey	2014	417	0
+metadata_split	split	canonical_smiles	2014	417	0

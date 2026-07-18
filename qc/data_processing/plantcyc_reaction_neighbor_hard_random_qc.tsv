@@ -1,0 +1,4 @@
+dataset_variant	split_scheme	split	positive_pairs	easy_negatives	hard_negatives	total_negatives	total_rows
+hard	random	train	4177	0	4177	4177	8354
+hard	random	val	522	0	522	522	1044
+hard	random	test	523	0	523	523	1046

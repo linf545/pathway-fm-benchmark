@@ -1,0 +1,4 @@
+dataset_variant	split_scheme	split	positive_pairs	easy_negatives	hard_negatives	total_negatives	total_rows
+easy	scaffold_pair	scaffold_train	4177	4177	0	4177	8354
+easy	scaffold_pair	scaffold_val	523	523	0	523	1046
+easy	scaffold_pair	scaffold_test	522	522	0	522	1044
