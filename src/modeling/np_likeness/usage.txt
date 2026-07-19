@@ -1,0 +1,18 @@
+cd /private/vina/FM_bench
+conda activate plantfm_data
+mkdir -p logs/modeling/np_likeness
+
+python src/modeling/np_likeness/run_np_likeness_full_ensemble.py \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  2>&1 | tee logs/modeling/np_likeness/full_ensemble.log
+
+
+
+python src/modeling/np_likeness/run_np_likeness_label_efficiency.py \
+  --split-mode both \
+  --base-split-seed 2026 \
+  --sample-seeds 2026 2027 2028 2029 2030 \
+  --train-sizes 3 10 30 100 300 1000 3000 10000 30000 100000 \
+  --overwrite-results \
+  2>&1 | tee logs/modeling/np_likeness/label_efficiency.log
