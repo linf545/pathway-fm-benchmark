@@ -35,10 +35,13 @@ SCRIPT_VERSION = "kegg_pathway_data_efficiency_repeated_splits_v4_val_tuned"
 
 DEFAULT_FM_PATTERNS = [
     "chemberta_77m_mlm",
+    "chemberta_100m_mlm",
     "molformer_c3_1_1b",
     "nafm_graph_mean",
     "molclr_gcn",
     "molclr_gin",
+    "graphmvp_gin",
+    "molebert_gin",
 ]
 
 PRIMARY_METRICS = [
@@ -60,7 +63,7 @@ ALL_METRICS = PRIMARY_METRICS + [
 
 
 def default_threshold_grid() -> List[float]:
-    return [round(x, 2) for x in np.arange(0.05, 1.00, 0.05)]
+    return [round(x, 2) for x in np.arange(0.2, 1.00, 0.2)]
 
 
 def parse_args():
@@ -135,7 +138,7 @@ def parse_args():
         "--C-grid",
         nargs="+",
         type=float,
-        default=[0.01, 0.1, 1.0, 10.0],
+        default=[0.01, 0.1, 1.0],
         help="Logistic-regression C candidates. Selected using validation macro-AUPRC.",
     )
     parser.add_argument(
@@ -150,7 +153,7 @@ def parse_args():
     )
     parser.add_argument("--n-bits", type=int, default=2048)
     parser.add_argument("--max-iter", type=int, default=3000)
-    parser.add_argument("--scaffold-candidates", type=int, default=1000)
+    parser.add_argument("--scaffold-candidates", type=int, default=200)
     parser.add_argument("--scaffold-size-weight", type=float, default=1.0)
     parser.add_argument("--scaffold-label-weight", type=float, default=0.25)
     parser.add_argument("--overwrite-splits", action="store_true")
