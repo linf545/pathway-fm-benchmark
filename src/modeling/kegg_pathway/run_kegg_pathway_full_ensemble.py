@@ -180,7 +180,7 @@ def parse_args():
         "--C-grid",
         nargs="+",
         type=float,
-        default=[0.01, 0.1, 1.0, 10.0],
+        default=[0.01, 0.1, 1.0],
         help="Logistic-regression C candidates. Selected using validation macro-AUPRC.",
     )
     parser.add_argument(
@@ -192,7 +192,7 @@ def parse_args():
     )
     parser.add_argument("--n-bits", type=int, default=2048)
     parser.add_argument("--max-iter", type=int, default=3000)
-    parser.add_argument("--scaffold-candidates", type=int, default=1000)
+    parser.add_argument("--scaffold-candidates", type=int, default=200)
     parser.add_argument("--scaffold-size-weight", type=float, default=1.0)
     parser.add_argument("--scaffold-label-weight", type=float, default=0.25)
     parser.add_argument("--overwrite-splits", action="store_true")
