@@ -1,0 +1,18 @@
+cd /private/vina/FM_bench
+conda activate plantfm_data
+
+mkdir -p logs/modeling/np_classification
+
+OMP_NUM_THREADS=1 \
+MKL_NUM_THREADS=1 \
+OPENBLAS_NUM_THREADS=1 \
+NUMEXPR_NUM_THREADS=1 \
+python src/modeling/np_classification/data_efficiency/run_npclassification_label_efficiency.py \
+  --split-modes random scaffold \
+  --base-split-seed 2026 \
+  --sample-seeds 2026 2027 2028 2029 2030 \
+  --train-sizes 10 30 100 300 1000 10000 \
+  --parallel-runs 4 \
+  --overwrite-results \
+  2>&1 | tee \
+  logs/modeling/np_classification/label_efficiency.log

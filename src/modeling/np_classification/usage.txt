@@ -1,0 +1,16 @@
+conda activate plantfm_data
+
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+
+python src/modeling/np_classification/run_npclassification_full.py \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --split-modes random scaffold \
+  --parallel-runs 4 \
+  --overwrite-results \
+  2>&1 | tee logs/modeling/np_classification/full_repeated.log
+
+
+
