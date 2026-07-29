@@ -1,0 +1,11 @@
+cd /private/vina/FM_bench
+conda activate plantfm_data
+
+mkdir -p logs/modeling
+
+python src/modeling/pmn_secondary_pathway/run_pmn_secondary_pathway_full_ensemble.py \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --skip-missing-fm \
+  --n-jobs 4 \
+  2>&1 | tee logs/modeling/bao_plant_pathway_full_ensemble.log
