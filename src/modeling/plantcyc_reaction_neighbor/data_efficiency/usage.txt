@@ -1,0 +1,17 @@
+cd /private/vina/FM_bench
+conda activate plantfm_data
+
+
+python src/modeling/plantcyc_reaction_neighbor/data_efficiency/run_plantcyc_reaction_neighbor_data_efficiency.py \
+  --features \
+    morgan_r2_2048 \
+    morgan_r3_2048 \
+    chemberta_77m_mlm \
+    chemberta_100m_mlm \
+    molformer_c3_1_1b \
+    nafm_graph_mean \
+    molclr_gcn \
+    molclr_gin \
+    graphmvp_gin \
+    molebert_gin \
+  --resume
