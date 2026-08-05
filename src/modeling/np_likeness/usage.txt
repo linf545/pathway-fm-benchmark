@@ -16,3 +16,49 @@ python src/modeling/np_likeness/run_np_likeness_label_efficiency.py \
   --train-sizes 3 10 30 100 300 1000 3000 10000 30000 100000 \
   --overwrite-results \
   2>&1 | tee logs/modeling/np_likeness/label_efficiency.log
+
+
+
+
+python src/modeling/np_likeness/finetune_np_likeness_lora_v1.py \
+  --model-name-or-path /private/vina/model_repos/ChemBERTa-77M-MLM \
+  --feature-name chemberta_77m_mlm \
+  --adaptation-modes lora \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --epochs 5 \
+  --train-batch-size 64 \
+  --eval-batch-size 128 \
+  --lora-learning-rate 1e-4 \
+  --head-learning-rate 1e-3 \
+  --precision bf16 \
+  --gradient-checkpointing \
+  --local-files-only \
+  --resume
+
+python src/modeling/np_likeness/finetune_np_likeness_lora_v2.py \
+  --model-name-or-path /private/vina/model_repos/MoLFormer-c3-1.1B \
+  --feature-name molformer_c3_1_1b \
+  --adaptation-modes lora \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --epochs 5 \
+  --train-batch-size 64 \
+  --eval-batch-size 128 \
+  --gradient-accumulation-steps 1 \
+  --lora-learning-rate 1e-4 \
+  --head-learning-rate 1e-3 \
+  --lora-target-modules query value \
+  --max-length 202 \
+  --precision bf16 \
+  --gradient-checkpointing \
+  --trust-remote-code \
+  --local-files-only \
+  --resume
+
+
+python src/modeling/np_likeness/finetune_np_likeness_lora_v2.py   --model-name-or-path /private/vina/model_repos/ChemBERTa-77M-MLM   --feature-name chemberta_77m_mlm   --adaptation-modes lora   --split-mode both   --split-seeds 2026 2027 2028 2029 2030   --epochs 3   --train-batch-size 64   --eval-batch-size 128   --lora-learning-rate 1e-4   --head-learning-rate 1e-3   --precision bf16   --gradient-checkpointing   --local-files-only --overwrite-feature-results
+
+
+
+python src/modeling/np_likeness/finetune_np_likeness_lora_v2.py   --model-name-or-path /private/vina/model_repos/ChemBERTa-77M-MLM   --feature-name molformer_c3_1_1b   --adaptation-modes lora   --split-mode both   --split-seeds 2026 2027 2028 2029 2030   --epochs 3   --train-batch-size 64   --eval-batch-size 128   --lora-learning-rate 1e-4   --head-learning-rate 1e-3   --precision bf16   --gradient-checkpointing   --local-files-only --overwrite-feature-results

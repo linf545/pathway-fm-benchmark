@@ -11,7 +11,7 @@ Design
 - For each sampling seed, class-balanced training subsets are nested:
   smaller subsets are contained in larger subsets.
 - Every representation uses the exact same sampled training compounds.
-- Logistic-regression C is selected using validation AUPRC.
+- Logistic-regression C is selected using validation AUROC, with AUPRC as a tie-breaker.
 - A single decision threshold is selected using validation F1.
 - Test data are never used for model, C, or threshold selection.
 
@@ -50,7 +50,7 @@ from sklearn.metrics import (
 from sklearn.preprocessing import StandardScaler
 
 
-SCRIPT_VERSION = "np_likeness_label_efficiency_v1"
+SCRIPT_VERSION = "np_likeness_label_efficiency_v2_auroc_tuning"
 TASK_NAME = "np_likeness"
 ID_COL = "compound_id"
 LABEL_COL = "is_np"
@@ -876,8 +876,8 @@ def fit_select_c_and_threshold(
     y_train = y[train_indices]
     y_validation = y[validation_indices]
     best = None
-    best_auprc = -np.inf
     best_auroc = -np.inf
+    best_auprc = -np.inf
 
     for C in C_grid:
         classifier = build_classifier(
@@ -906,10 +906,10 @@ def fit_select_c_and_threshold(
         )
 
         if (
-            metrics["auprc"] > best_auprc
+            metrics["auroc"] > best_auroc
             or (
-                np.isclose(metrics["auprc"], best_auprc)
-                and metrics["auroc"] > best_auroc
+                np.isclose(metrics["auroc"], best_auroc)
+                and metrics["auprc"] > best_auprc
             )
         ):
             best = {
@@ -922,8 +922,8 @@ def fit_select_c_and_threshold(
                 "n_iter": int(classifier.n_iter_[0]),
                 "reached_max_iter": reached_max_iter,
             }
-            best_auprc = metrics["auprc"]
             best_auroc = metrics["auroc"]
+            best_auprc = metrics["auprc"]
 
     if best is None:
         raise RuntimeError("No C value was selected")
@@ -975,7 +975,7 @@ def evaluate_row(
         "sampling_strategy": "nested_class_balanced",
         "C_grid": "|".join(str(float(C)) for C in args.C_grid),
         "selected_C": selected["selected_C"],
-        "C_selection_metric": "validation_auprc",
+        "C_selection_metric": "validation_auroc",
         "validation_auprc_for_selected_C": selected[
             "validation_auprc_for_selected_C"
         ],
@@ -1590,11 +1590,11 @@ def main() -> None:
         "requested_n_train",
         "feature",
         "n_sampling_replicates",
-        "auprc_mean",
-        "auprc_sd",
         "auroc_mean",
         "auroc_sd",
-        "gain_vs_morgan_r2_2048_auprc_mean",
+        "auprc_mean",
+        "auprc_sd",
+        "gain_vs_morgan_r2_2048_auroc_mean",
     ]
     display_columns = [
         column
@@ -1605,7 +1605,7 @@ def main() -> None:
         print("\n=== Label-efficiency test statistics ===")
         print(
             statistics.sort_values(
-                ["split_mode", "requested_n_train", "auprc_mean"],
+                ["split_mode", "requested_n_train", "auroc_mean"],
                 ascending=[True, True, False],
             )[display_columns].to_string(index=False)
         )

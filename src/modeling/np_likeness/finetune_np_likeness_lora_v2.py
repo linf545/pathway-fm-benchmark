@@ -15,7 +15,7 @@ Design
 - Supports LoRA adaptation and an optional frozen-encoder linear-head control.
 - Uses the same mean pooling over non-padding tokens as the frozen-embedding
   benchmark.
-- Selects the best epoch using validation AUPRC, with validation AUROC as a
+- Selects the best epoch using validation AUROC, with validation AUPRC as a
   tie-breaker.
 - Selects a global classification threshold using validation F1.
 - Evaluates the untouched test set after model and threshold selection.
@@ -61,7 +61,7 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 
-SCRIPT_VERSION = "np_likeness_lora_repeated_splits_v2"
+SCRIPT_VERSION = "np_likeness_lora_repeated_splits_v3"
 TASK_NAME = "np_likeness"
 ID_COL = "compound_id"
 LABEL_COL = "is_np"
@@ -1006,10 +1006,10 @@ def train_one_run(
         )
 
         improved = (
-            row["validation_auprc"] > best_auprc
+            row["validation_auroc"] > best_auroc
             or (
-                np.isclose(row["validation_auprc"], best_auprc)
-                and row["validation_auroc"] > best_auroc
+                np.isclose(row["validation_auroc"], best_auroc)
+                and row["validation_auprc"] > best_auprc
             )
         )
         if improved:
@@ -1098,7 +1098,7 @@ def train_one_run(
         "split_mode": split_mode,
         "split_seed": split_seed,
         "best_epoch": best_epoch,
-        "checkpoint_selection_metric": "validation_auprc",
+        "checkpoint_selection_metric": "validation_auroc",
         "validation_auprc_at_best_epoch": best_auprc,
         "validation_auroc_at_best_epoch": best_auroc,
         "tuned_threshold": threshold,
@@ -1162,7 +1162,7 @@ def train_one_run(
                 ),
                 "loss": loss,
                 "selected_epoch": best_epoch,
-                "selected_by": "validation_auprc_then_auroc",
+                "selected_by": "validation_auroc_then_auprc",
                 "tuned_threshold": threshold,
                 "auprc": metrics["auprc"],
                 "auroc": metrics["auroc"],

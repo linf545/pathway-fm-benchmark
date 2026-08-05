@@ -14,7 +14,7 @@ Evaluation
 - Five predefined stratified-random splits.
 - Five predefined scaffold-disjoint splits.
 - Each split uses train/validation/test partitions.
-- Logistic-regression C is selected using validation AUPRC.
+- Logistic-regression C is selected using validation AUROC, with AUPRC as a tie-breaker.
 - A global decision threshold is selected using validation F1.
 - Test data are not used for model or threshold selection.
 
@@ -53,7 +53,7 @@ from sklearn.metrics import (
 from sklearn.preprocessing import StandardScaler
 
 
-SCRIPT_VERSION = "np_likeness_full_ensemble_repeated_splits_v1"
+SCRIPT_VERSION = "np_likeness_full_ensemble_repeated_splits_v2_auroc_tuning"
 TASK_NAME = "np_likeness"
 ID_COL = "compound_id"
 LABEL_COL = "is_np"
@@ -70,8 +70,8 @@ DEFAULT_FM_PATTERNS = [
 ]
 
 PRIMARY_METRICS = [
-    "auprc",
     "auroc",
+    "auprc",
     "f1",
     "balanced_accuracy",
 ]
@@ -728,8 +728,8 @@ def fit_select_c_and_threshold(
     )
 
     best = None
-    best_auprc = -np.inf
     best_auroc = -np.inf
+    best_auprc = -np.inf
     y_train = y[train_idx]
     y_validation = y[validation_idx]
 
@@ -746,10 +746,10 @@ def fit_select_c_and_threshold(
         metrics = probability_metrics(y_validation, probability)
 
         if (
-            metrics["auprc"] > best_auprc
+            metrics["auroc"] > best_auroc
             or (
-                np.isclose(metrics["auprc"], best_auprc)
-                and metrics["auroc"] > best_auroc
+                np.isclose(metrics["auroc"], best_auroc)
+                and metrics["auprc"] > best_auprc
             )
         ):
             best = {
@@ -763,8 +763,8 @@ def fit_select_c_and_threshold(
                 "validation_auprc_for_selected_C": metrics["auprc"],
                 "validation_auroc_for_selected_C": metrics["auroc"],
             }
-            best_auprc = metrics["auprc"]
             best_auroc = metrics["auroc"]
+            best_auprc = metrics["auprc"]
 
     if best is None:
         raise RuntimeError("No valid C candidate was selected")
@@ -1067,7 +1067,7 @@ def main() -> None:
             metadata = {
                 "C_grid": "|".join(str(float(C)) for C in args.C_grid),
                 "selected_C": selected["selected_C"],
-                "C_selection_metric": "validation_auprc",
+                "C_selection_metric": "validation_auroc",
                 "validation_auprc_for_selected_C": selected[
                     "validation_auprc_for_selected_C"
                 ],
@@ -1190,7 +1190,7 @@ def main() -> None:
                 "C_grid": "base_models_independently_tuned",
                 "selected_C": np.nan,
                 "C_selection_metric": (
-                    "base_models_validation_auprc"
+                    "base_models_validation_auroc"
                 ),
                 "validation_auprc_for_selected_C": np.nan,
                 "validation_auroc_for_selected_C": np.nan,
@@ -1347,11 +1347,11 @@ def main() -> None:
             "split_mode",
             "feature",
             "n_split_replicates",
-            "auprc_mean",
-            "auprc_sd",
-            "auprc_se",
             "auroc_mean",
             "auroc_sd",
+            "auroc_se",
+            "auprc_mean",
+            "auprc_sd",
             "f1_mean",
             "balanced_accuracy_mean",
         ]
@@ -1363,7 +1363,7 @@ def main() -> None:
         print("\n=== Main test statistics ===")
         print(
             main_statistics.sort_values(
-                ["split_mode", "auprc_mean"],
+                ["split_mode", "auroc_mean"],
                 ascending=[True, False],
             )[display_columns].to_string(index=False)
         )
