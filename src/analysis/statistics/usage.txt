@@ -1,0 +1,11 @@
+python src/analysis/statistics/compute_paired_difference_ci.py \
+  --input results/pmn_secondary_pathway/data_efficiency/pmn_secondary_pathway_data_efficiency_per_split_means.tsv \
+  --model-a graphmvp_gin \
+  --model-b morgan_r2_2048 \
+  --model-col feature \
+  --seed-col split_seed \
+  --metric-col macro_auroc \
+  --where split_mode=scaffold \
+  --where eval_set=bao_B_external_test \
+  --where requested_n_per_label=2 \
+  --output-prefix results/statistics/paired_ci/pmn_graphmvp_vs_morgan_n2
