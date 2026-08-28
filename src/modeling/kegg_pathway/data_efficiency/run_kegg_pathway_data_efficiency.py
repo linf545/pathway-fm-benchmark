@@ -31,7 +31,7 @@ from sklearn.preprocessing import StandardScaler
 
 RDLogger.DisableLog("rdApp.warning")
 
-SCRIPT_VERSION = "kegg_pathway_data_efficiency_repeated_splits_v4_val_tuned"
+SCRIPT_VERSION = "kegg_pathway_data_efficiency_repeated_splits_v5_auroc_tuning"
 
 DEFAULT_FM_PATTERNS = [
     "chemberta_77m_mlm",
@@ -45,8 +45,8 @@ DEFAULT_FM_PATTERNS = [
 ]
 
 PRIMARY_METRICS = [
-    "macro_auprc",
     "macro_auroc",
+    "macro_auprc",
     "macro_f1",
     "micro_f1",
     "sample_f1",
@@ -139,7 +139,7 @@ def parse_args():
         nargs="+",
         type=float,
         default=[0.01, 0.1, 1.0],
-        help="Logistic-regression C candidates. Selected using validation macro-AUPRC.",
+        help="Logistic-regression C candidates. Selected using validation macro-AUROC.",
     )
     parser.add_argument(
         "--threshold-grid",
@@ -732,26 +732,26 @@ def fit_select_c_and_threshold(
 ):
     y_val = Y[validation_mask]
     best = None
-    best_score = -np.inf
     best_auroc = -np.inf
+    best_auprc = -np.inf
 
     for C in C_grid:
         model = build_model(feature_type, seed=seed, C=float(C), max_iter=max_iter)
         model.fit(X[train_idx], Y[train_idx])
         val_probability = np.asarray(model.predict_proba(X[validation_mask]), dtype=float)
         pmetrics = probability_metrics(y_val, val_probability)
-        score = pmetrics["macro_auprc"]
         auroc = pmetrics["macro_auroc"]
-        if (score > best_score) or (np.isclose(score, best_score) and auroc > best_auroc):
+        auprc = pmetrics["macro_auprc"]
+        if (auroc > best_auroc) or (np.isclose(auroc, best_auroc) and auprc > best_auprc):
             best = {
                 "model": model,
                 "selected_C": float(C),
                 "validation_probability": val_probability,
-                "validation_macro_auprc_for_C": score,
+                "validation_macro_auprc_for_C": auprc,
                 "validation_macro_auroc_for_C": auroc,
             }
-            best_score = score
             best_auroc = auroc
+            best_auprc = auprc
 
     tuned_threshold, threshold_val_metrics = tune_threshold(
         y_val, best["validation_probability"], threshold_grid
@@ -825,7 +825,7 @@ def evaluate_feature(
                     "classifier": "one_vs_rest_logistic_regression",
                     "C_grid": "|".join(str(float(c)) for c in C_grid),
                     "selected_C": selected["selected_C"],
-                    "C_selection_metric": "validation_macro_auprc",
+                    "C_selection_metric": "validation_macro_auroc",
                     "validation_macro_auprc_for_selected_C": selected["validation_macro_auprc_for_C"],
                     "validation_macro_auroc_for_selected_C": selected["validation_macro_auroc_for_C"],
                     "threshold_strategy": "global_threshold_tuned_on_validation_macro_f1",
@@ -1035,15 +1035,15 @@ def main():
             "feature",
             "requested_n_per_label",
             "n_split_replicates",
-            "macro_auprc_mean",
-            "macro_auprc_sd",
-            "macro_auprc_se",
             "macro_auroc_mean",
+            "macro_auroc_sd",
+            "macro_auroc_se",
+            "macro_auprc_mean",
             "macro_f1_mean",
             "macro_f1_se",
         ]
         display_cols = [c for c in display_cols if c in main_stats.columns]
-        print(main_stats.sort_values(["split_mode", "requested_n_per_label", "macro_auprc_mean"], ascending=[True, True, False])[display_cols].to_string(index=False))
+        print(main_stats.sort_values(["split_mode", "requested_n_per_label", "macro_auroc_mean"], ascending=[True, True, False])[display_cols].to_string(index=False))
 
 
 if __name__ == "__main__":

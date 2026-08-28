@@ -2,29 +2,51 @@
 """Build the compound master table and pair-index tables for the PlantCyc
 reaction-neighbor task.
 
-The script reads the six balanced 1:1 task tables (easy, hard, and mixed;
-random and scaffold-pair splits), creates one deduplicated compound metadata
-table keyed by canonical SMILES, and writes pair tables containing integer
-indices into that metadata table.
+The script reads balanced reaction-neighbor task tables, creates one
+compound-level metadata table keyed by canonical SMILES, adds an InChIKey for
+cross-model alignment, and writes pair tables containing integer indices into
+that metadata table.
+
+Supported task layouts
+----------------------
+Legacy unseeded files:
+    plantcyc_reaction_neighbor_<variant>_<scheme>.tsv
+
+Repeated benchmark files:
+    plantcyc_reaction_neighbor_<variant>_<scheme>_seed<seed>.tsv
+
+In ``auto`` mode, seeded files are preferred when present; otherwise the six
+legacy files are used. The script does not mix seeded and unseeded tables in
+auto mode.
 """
 
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 from typing import Iterable
 
 import pandas as pd
+import numpy as np
+from rdkit import Chem
 
 
-EXPECTED_TASK_FILES = {
-    "plantcyc_reaction_neighbor_easy_random.tsv",
-    "plantcyc_reaction_neighbor_hard_random.tsv",
-    "plantcyc_reaction_neighbor_mixed_random.tsv",
-    "plantcyc_reaction_neighbor_easy_scaffold_pair.tsv",
-    "plantcyc_reaction_neighbor_hard_scaffold_pair.tsv",
-    "plantcyc_reaction_neighbor_mixed_scaffold_pair.tsv",
+VARIANTS = ("easy", "hard", "mixed")
+SCHEMES = ("random", "scaffold_pair")
+
+LEGACY_EXPECTED_TASK_FILES = {
+    f"plantcyc_reaction_neighbor_{variant}_{scheme}.tsv"
+    for variant in VARIANTS
+    for scheme in SCHEMES
 }
+
+TASK_FILE_PATTERN = re.compile(
+    r"^plantcyc_reaction_neighbor_"
+    r"(?P<variant>easy|hard|mixed)_"
+    r"(?P<scheme>random|scaffold_pair)"
+    r"(?:_seed(?P<seed>\d+))?\.tsv$"
+)
 
 REQUIRED_COLUMNS = [
     "pair_id",
@@ -60,21 +82,44 @@ PAIR_INDEX_COLUMNS = [
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Create a deduplicated compound master and pair-index tables for "
-            "the PlantCyc reaction-neighbor task."
+            "Create an InChIKey-annotated compound master and pair-index "
+            "tables for the PlantCyc reaction-neighbor task."
         )
     )
     parser.add_argument(
         "--task-dir",
         type=Path,
         default=Path("data/tasks/plantcyc_reaction_neighbor"),
-        help="Directory containing the six balanced task TSV files.",
+        help="Directory containing balanced Task 3 TSV files.",
     )
     parser.add_argument(
         "--out-dir",
         type=Path,
         default=Path("data/features/plantcyc_reaction_neighbor"),
         help="Output directory for metadata and pair-index tables.",
+    )
+    parser.add_argument(
+        "--task-file-mode",
+        choices=["auto", "legacy", "seeded", "all"],
+        default="auto",
+        help=(
+            "Which task tables to consume. auto prefers seeded files when "
+            "present, otherwise the six legacy files."
+        ),
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Replace existing metadata and selected pair-index files.",
+    )
+    parser.add_argument(
+        "--allow-reindex",
+        action="store_true",
+        help=(
+            "Permit the canonical-SMILES row order to differ from an existing "
+            "metadata.tsv. Do not use this when existing compound-level "
+            "fingerprints or FM embeddings must remain aligned."
+        ),
     )
     return parser.parse_args()
 
@@ -90,8 +135,100 @@ def join_unique(values: Iterable[object]) -> str:
     return "|".join(sorted(cleaned))
 
 
+def parse_task_name(path: Path) -> dict[str, str | int | None]:
+    match = TASK_FILE_PATTERN.match(path.name)
+    if match is None:
+        raise ValueError(f"Unsupported task filename: {path.name}")
+    seed_text = match.group("seed")
+    return {
+        "variant": match.group("variant"),
+        "scheme": match.group("scheme"),
+        "seed": int(seed_text) if seed_text is not None else None,
+    }
+
+
+def discover_task_files(task_dir: Path, mode: str) -> list[Path]:
+    if not task_dir.exists():
+        raise FileNotFoundError(task_dir)
+
+    candidates = sorted(
+        path
+        for path in task_dir.glob("plantcyc_reaction_neighbor_*.tsv")
+        if TASK_FILE_PATTERN.match(path.name)
+    )
+    legacy = [path for path in candidates if parse_task_name(path)["seed"] is None]
+    seeded = [path for path in candidates if parse_task_name(path)["seed"] is not None]
+
+    if mode == "auto":
+        selected = seeded if seeded else legacy
+        selected_mode = "seeded" if seeded else "legacy"
+    elif mode == "legacy":
+        selected = legacy
+        selected_mode = "legacy"
+    elif mode == "seeded":
+        selected = seeded
+        selected_mode = "seeded"
+    else:
+        selected = candidates
+        selected_mode = "all"
+
+    if not selected:
+        raise FileNotFoundError(
+            f"No supported Task 3 files found in {task_dir} for mode={mode}"
+        )
+
+    if selected_mode == "legacy":
+        observed = {path.name for path in selected}
+        missing = sorted(LEGACY_EXPECTED_TASK_FILES - observed)
+        unexpected = sorted(observed - LEGACY_EXPECTED_TASK_FILES)
+        if missing or unexpected:
+            raise RuntimeError(
+                "Legacy mode expects exactly six task files.\n"
+                f"Missing: {missing}\nUnexpected: {unexpected}"
+            )
+
+    if selected_mode in {"seeded", "all"} and seeded:
+        condition_to_seeds: dict[tuple[str, str], set[int]] = {
+            (variant, scheme): set()
+            for variant in VARIANTS
+            for scheme in SCHEMES
+        }
+        for path in seeded:
+            parsed = parse_task_name(path)
+            condition_to_seeds[
+                (str(parsed["variant"]), str(parsed["scheme"]))
+            ].add(int(parsed["seed"]))
+
+        seed_sets = list(condition_to_seeds.values())
+        missing_conditions = [
+            f"{variant}/{scheme}"
+            for (variant, scheme), seeds in condition_to_seeds.items()
+            if not seeds
+        ]
+        if missing_conditions:
+            raise RuntimeError(
+                "Seeded task files are missing conditions: "
+                + ", ".join(missing_conditions)
+            )
+        if any(seeds != seed_sets[0] for seeds in seed_sets[1:]):
+            details = {
+                f"{variant}/{scheme}": sorted(seeds)
+                for (variant, scheme), seeds in condition_to_seeds.items()
+            }
+            raise RuntimeError(
+                "Seeded task conditions do not share the same seed set:\n"
+                + "\n".join(f"  {key}: {value}" for key, value in details.items())
+            )
+
+    print(
+        f"Task-file mode: {mode}; selected layout: {selected_mode}; "
+        f"files: {len(selected)}"
+    )
+    return selected
+
+
 def read_and_validate_task(path: Path) -> pd.DataFrame:
-    df = pd.read_csv(path, sep="\t")
+    df = pd.read_csv(path, sep="\t", low_memory=False)
 
     missing = [column for column in REQUIRED_COLUMNS if column not in df.columns]
     if missing:
@@ -102,6 +239,12 @@ def read_and_validate_task(path: Path) -> pd.DataFrame:
             raise RuntimeError(f"{path.name}: missing values in {column}")
         if df[column].astype(str).str.strip().eq("").any():
             raise RuntimeError(f"{path.name}: empty values in {column}")
+
+    df["label"] = df["label"].astype(int)
+    if set(df["label"].unique()) != {0, 1}:
+        raise RuntimeError(f"{path.name}: labels are not exactly {{0, 1}}")
+    if df["pair_id"].astype(str).duplicated().any():
+        raise RuntimeError(f"{path.name}: duplicate pair_id values")
 
     return df
 
@@ -118,25 +261,43 @@ def endpoint_rows(df: pd.DataFrame, side: str, source_name: str) -> pd.DataFrame
     )
 
 
+def smiles_to_inchikey(smiles: str) -> str:
+    mol = Chem.MolFromSmiles(str(smiles))
+    if mol is None:
+        raise RuntimeError(f"Invalid canonical SMILES in compound master: {smiles}")
+
+    inchikey = Chem.MolToInchiKey(mol)
+    if not inchikey:
+        raise RuntimeError(f"Could not generate InChIKey: {smiles}")
+    return inchikey
+
+
+def atomic_write_tsv(frame: pd.DataFrame, path: Path) -> None:
+    temporary = path.with_name(f".{path.name}.tmp")
+    try:
+        frame.to_csv(temporary, sep="\t", index=False)
+        temporary.replace(path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
 def main() -> None:
     args = parse_args()
     task_dir = args.task_dir
     out_dir = args.out_dir
     pair_index_dir = out_dir / "pair_indices"
 
-    out_dir.mkdir(parents=True, exist_ok=True)
-    pair_index_dir.mkdir(parents=True, exist_ok=True)
-
-    task_files = sorted(task_dir.glob("plantcyc_reaction_neighbor_*_*.tsv"))
-    found = {path.name for path in task_files}
-
-    missing_files = sorted(EXPECTED_TASK_FILES - found)
-    unexpected_files = sorted(found - EXPECTED_TASK_FILES)
-    if missing_files or unexpected_files:
-        raise RuntimeError(
-            "Expected exactly the six balanced task files.\n"
-            f"Missing: {missing_files}\n"
-            f"Unexpected: {unexpected_files}"
+    task_files = discover_task_files(task_dir, args.task_file_mode)
+    metadata_path = out_dir / "metadata.tsv"
+    planned_pair_paths = [pair_index_dir / path.name for path in task_files]
+    existing_outputs = [
+        path for path in [metadata_path, *planned_pair_paths] if path.exists()
+    ]
+    if existing_outputs and not args.overwrite:
+        raise FileExistsError(
+            "Outputs already exist. Use --overwrite to replace them:\n"
+            + "\n".join(str(path) for path in existing_outputs[:20])
         )
 
     task_tables: dict[str, pd.DataFrame] = {}
@@ -183,18 +344,84 @@ def main() -> None:
         "task_compound_id",
         [f"PCYC_NBR_{i:07d}" for i in range(1, len(metadata) + 1)],
     )
+    metadata.insert(
+        metadata.columns.get_loc("canonical_smiles") + 1,
+        "inchikey",
+        metadata["canonical_smiles"].map(smiles_to_inchikey),
+    )
 
-    metadata_path = out_dir / "metadata.tsv"
-    metadata.to_csv(metadata_path, sep="\t", index=False)
+    if metadata["inchikey"].isna().any() or metadata["inchikey"].eq("").any():
+        raise RuntimeError("Compound metadata contains missing InChIKeys")
+
+    # Standard InChI normalizes some tautomeric/prototropic forms. Distinct
+    # canonical SMILES can therefore legitimately share an InChIKey. Task 3
+    # compound identity remains task_compound_id/canonical_smiles; InChIKey is
+    # retained as a cross-reference rather than enforced as a unique key.
+    metadata.insert(
+        metadata.columns.get_loc("inchikey") + 1,
+        "inchikey_collision_size",
+        metadata.groupby("inchikey")["inchikey"].transform("size").astype(int),
+    )
+
+    duplicate_inchikeys = metadata.loc[
+        metadata["inchikey_collision_size"].gt(1),
+        [
+            "compound_index",
+            "task_compound_id",
+            "canonical_smiles",
+            "inchikey",
+            "inchikey_collision_size",
+        ],
+    ]
+    if not duplicate_inchikeys.empty:
+        print(
+            "WARNING: distinct canonical SMILES share standard InChIKeys. "
+            "They are retained as separate Task 3 compounds and must be aligned "
+            "using task_compound_id, not inchikey."
+        )
+        print(duplicate_inchikeys.to_string(index=False))
+
+    # Existing fingerprints and FM embeddings are aligned to metadata row order.
+    # Adding InChIKey must not silently reindex those matrices.
+    if metadata_path.exists():
+        existing_metadata = pd.read_csv(
+            metadata_path,
+            sep="\t",
+            low_memory=False,
+        )
+        required_existing = {"compound_index", "canonical_smiles"}
+        missing_existing = required_existing - set(existing_metadata.columns)
+        if missing_existing:
+            raise RuntimeError(
+                f"Existing {metadata_path} lacks columns: "
+                f"{sorted(missing_existing)}"
+            )
+
+        existing_smiles = (
+            existing_metadata.sort_values("compound_index")["canonical_smiles"]
+            .astype(str)
+            .tolist()
+        )
+        new_smiles = metadata["canonical_smiles"].astype(str).tolist()
+        if existing_smiles != new_smiles and not args.allow_reindex:
+            raise RuntimeError(
+                "The regenerated compound order differs from the existing "
+                "metadata.tsv. Existing Morgan/RDKit/FM matrices would become "
+                "misaligned. Re-run with the same task-file layout, or use "
+                "--allow-reindex only when all compound-level features will be "
+                "regenerated."
+            )
+        if existing_smiles == new_smiles:
+            print(
+                "Existing compound row order matches regenerated metadata; "
+                "current feature matrices remain aligned."
+            )
 
     smiles_to_index = dict(
         zip(metadata["canonical_smiles"], metadata["compound_index"])
     )
 
-    print(f"Task files: {len(task_files)}")
-    print(f"Unique compounds: {len(metadata):,}")
-    print(f"Wrote: {metadata_path}")
-
+    indexed_outputs: dict[Path, pd.DataFrame] = {}
     for file_name, df in task_tables.items():
         indexed = df.copy()
         indexed["substrate_compound_index"] = indexed["substrate_smiles"].map(
@@ -210,32 +437,66 @@ def main() -> None:
         ]
         if indexed[index_columns].isna().any().any():
             raise RuntimeError(f"{file_name}: compound-index mapping failed")
-
         indexed[index_columns] = indexed[index_columns].astype(int)
 
-        out_path = pair_index_dir / file_name
-        indexed[PAIR_INDEX_COLUMNS].to_csv(out_path, sep="\t", index=False)
+        output_columns = PAIR_INDEX_COLUMNS.copy()
+        if "split_seed" in indexed.columns:
+            output_columns.insert(2, "split_seed")
 
-        unique_endpoint_count = len(
-            set(df["substrate_smiles"]) | set(df["product_smiles"])
-        )
-        print(
-            f"{file_name}: pairs={len(df):,}; "
-            f"unique endpoint compounds={unique_endpoint_count:,}; "
-            f"wrote={out_path}"
-        )
+        indexed_outputs[pair_index_dir / file_name] = indexed[output_columns]
 
-    # Final integrity checks.
-    reread = pd.read_csv(metadata_path, sep="\t")
+    # Complete all generation and validation before replacing any file.
+    out_dir.mkdir(parents=True, exist_ok=True)
+    pair_index_dir.mkdir(parents=True, exist_ok=True)
+    atomic_write_tsv(metadata, metadata_path)
+    for path, frame in indexed_outputs.items():
+        atomic_write_tsv(frame, path)
+
+    # Final on-disk integrity checks.
+    reread = pd.read_csv(metadata_path, sep="\t", low_memory=False)
+    required_metadata = {
+        "compound_index",
+        "task_compound_id",
+        "canonical_smiles",
+        "inchikey",
+        "inchikey_collision_size",
+    }
+    missing_metadata = required_metadata - set(reread.columns)
+    if missing_metadata:
+        raise RuntimeError(
+            f"Written metadata lacks columns: {sorted(missing_metadata)}"
+        )
     if reread["compound_index"].duplicated().any():
         raise RuntimeError("Duplicate compound_index values in metadata")
+    if reread["task_compound_id"].duplicated().any():
+        raise RuntimeError("Duplicate task_compound_id values in metadata")
     if reread["canonical_smiles"].duplicated().any():
         raise RuntimeError("Duplicate canonical_smiles values in metadata")
+    observed_collision_sizes = (
+        reread.groupby("inchikey")["inchikey"].transform("size").astype(int)
+    )
+    if not np.array_equal(
+        reread["inchikey_collision_size"].astype(int).to_numpy(),
+        observed_collision_sizes.to_numpy(),
+    ):
+        raise RuntimeError(
+            "Written inchikey_collision_size values do not match the "
+            "observed standard-InChIKey collision groups"
+        )
     if reread["compound_index"].tolist() != list(range(len(reread))):
         raise RuntimeError("compound_index values are not contiguous from zero")
 
-    print("\nIntegrity checks passed.")
+    print(f"Task files: {len(task_files)}")
+    print(f"Unique compounds: {len(metadata):,}")
+    print(f"Unique standard InChIKeys: {metadata['inchikey'].nunique():,}")
+    print(
+        "Compounds in non-unique InChIKey groups:",
+        int(metadata["inchikey_collision_size"].gt(1).sum()),
+    )
+    print(f"Wrote: {metadata_path}")
+    print(f"Pair-index files written: {len(indexed_outputs)}")
     print(f"Pair-index directory: {pair_index_dir}")
+    print("\nIntegrity checks passed.")
 
 
 if __name__ == "__main__":
