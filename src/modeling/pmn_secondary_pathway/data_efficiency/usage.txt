@@ -6,9 +6,9 @@ mkdir -p logs/modeling/pmn_secondary_pathway
 python \
   src/modeling/pmn_secondary_pathway/data_efficiency/run_pmn_secondary_pathway_data_efficiency.py \
   --split-mode both \
-  --split-seeds 2026 2027 2028 2030 \
+  --split-seeds 2026 2027 2028 2031 2030 \
   --sampling-seeds 0 1 2 3 4 \
-  --n-per-label 1 2 4 8 \
+  --n-per-label 1 2 4 \
   --fm-patterns \
     chemberta_77m_mlm \
     chemberta_100m_mlm \
@@ -21,4 +21,4 @@ python \
   --skip-missing-fm \
   --n-jobs 4 \
   2>&1 | tee \
-  logs/modeling/pmn_secondary_pathway/data_efficiency.log
+  logs/modeling/pmn_secondary_pathway/data_efficiency_auroc_selection.log

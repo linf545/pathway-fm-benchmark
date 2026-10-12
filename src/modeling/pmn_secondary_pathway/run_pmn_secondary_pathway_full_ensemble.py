@@ -16,7 +16,7 @@ Representations
 
 Model selection
 ---------------
-- Logistic-regression C is selected using validation macro-AUPRC.
+- Logistic-regression C is selected using validation macro-AUROC, with macro-AUPRC as a tie-breaker.
 - A single global decision threshold is selected using validation macro-F1.
 - Bao B is never used for model or threshold selection.
 """
@@ -49,7 +49,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 
-SCRIPT_VERSION = "bao_ab_plant_pathway_full_ensemble_repeated_splits_v1"
+SCRIPT_VERSION = "bao_ab_plant_pathway_full_ensemble_repeated_splits_v2_auroc_tuning"
 TASK_NAME = "bao_ab_plant_pathway_18label"
 DATASET_A_NAME = "Bao_A_trainval"
 DATASET_B_NAME = "Bao_B_external_test"
@@ -67,8 +67,8 @@ DEFAULT_FULL_FM_PATTERNS = [
 ]
 
 PRIMARY_METRICS = [
-    "macro_auprc",
     "macro_auroc",
+    "macro_auprc",
     "macro_f1",
     "micro_f1",
     "sample_f1",
@@ -166,7 +166,7 @@ def parse_args():
         nargs="+",
         type=float,
         default=[0.01, 0.1,1],
-        help="Logistic-regression C candidates selected by validation macro-AUPRC.",
+        help="Logistic-regression C candidates selected by validation macro-AUROC.",
     )
     parser.add_argument(
         "--threshold-grid",
@@ -832,8 +832,8 @@ def fit_select_c_and_threshold(
 ):
     y_val = Y[validation_mask]
     best = None
-    best_score = -np.inf
     best_auroc = -np.inf
+    best_auprc = -np.inf
 
     for C in C_grid:
         model = build_model(
@@ -849,20 +849,20 @@ def fit_select_c_and_threshold(
             dtype=float,
         )
         pmetrics = probability_metrics(y_val, val_probability)
-        score = pmetrics["macro_auprc"]
         auroc = pmetrics["macro_auroc"]
-        if (score > best_score) or (
-            np.isclose(score, best_score) and auroc > best_auroc
+        auprc = pmetrics["macro_auprc"]
+        if (auroc > best_auroc) or (
+            np.isclose(auroc, best_auroc) and auprc > best_auprc
         ):
             best = {
                 "model": model,
                 "selected_C": float(C),
                 "validation_probability": val_probability,
-                "validation_macro_auprc_for_C": score,
+                "validation_macro_auprc_for_C": auprc,
                 "validation_macro_auroc_for_C": auroc,
             }
-            best_score = score
             best_auroc = auroc
+            best_auprc = auprc
 
     if best is None:
         raise RuntimeError("No valid model was selected from the C grid")
@@ -1097,7 +1097,7 @@ def main():
             metadata = {
                 "C_grid": "|".join(str(float(C)) for C in args.C_grid),
                 "selected_C": selected["selected_C"],
-                "C_selection_metric": "validation_macro_auprc",
+                "C_selection_metric": "validation_macro_auroc",
                 "validation_macro_auprc_for_selected_C": selected[
                     "validation_macro_auprc_for_C"
                 ],
@@ -1173,7 +1173,7 @@ def main():
             metadata = {
                 "C_grid": "base_models_independently_tuned",
                 "selected_C": np.nan,
-                "C_selection_metric": "base_models_validation_macro_auprc",
+                "C_selection_metric": "base_models_validation_macro_auroc",
                 "validation_macro_auprc_for_selected_C": np.nan,
                 "validation_macro_auroc_for_selected_C": np.nan,
                 "threshold_strategy": (
@@ -1263,10 +1263,10 @@ def main():
             "split_mode",
             "feature",
             "n_split_replicates",
-            "macro_auprc_mean",
-            "macro_auprc_sd",
-            "macro_auprc_se",
             "macro_auroc_mean",
+            "macro_auroc_sd",
+            "macro_auroc_se",
+            "macro_auprc_mean",
             "macro_f1_mean",
             "macro_f1_se",
         ]
@@ -1275,7 +1275,7 @@ def main():
         ]
         print(
             main_stats.sort_values(
-                ["split_mode", "macro_auprc_mean"],
+                ["split_mode", "macro_auroc_mean"],
                 ascending=[True, False],
             )[display_cols].to_string(index=False)
         )

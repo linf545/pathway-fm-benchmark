@@ -1,0 +1,215 @@
+conda activate plantfm_chemberta_hf
+cd /private/vina/FM_bench
+
+python /private/vina/FM_bench/src/modeling/extract_hf_smiles_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --model-dir /private/vina/model_repos/ChemBERTa-77M-MLM \
+  --model-name chemberta_77m_mlm \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --model-class auto \
+  --batch-size 128 \
+  --local-files-only \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/chemberta_77m_mlm.full.log
+
+
+conda activate plantfm_chemberta_hf
+
+python /private/vina/FM_bench/src/modeling/extract_hf_smiles_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --model-dir /private/vina/model_repos/ChemBERTa-100M-MLM \
+  --model-name chemberta_100m_mlm \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --model-class auto \
+  --batch-size 64 \
+  --max-length 256 \
+  --local-files-only \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/chemberta_100m_mlm.full.maxlen256.log
+
+
+conda activate plantfm_chemberta_hf
+
+python /private/vina/FM_bench/src/modeling/extract_hf_smiles_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --model-dir /private/vina/model_repos/MoLFormer-c3-1.1B \
+  --model-name molformer_c3_1_1b \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --model-class mlm \
+  --trust-remote-code \
+  --local-files-only \
+  --batch-size 32 \
+  --max-length 256 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/molformer_c3_1_1b.full.maxlen256.log
+
+
+conda activate plantfm_molclr
+cd /private/vina/model_repos/MolCLR
+
+python /private/vina/FM_bench/src/modeling/extract_molclr_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --model-type gcn \
+  --ckpt /private/vina/model_repos/MolCLR/ckpt/pretrained_gcn/checkpoints/model.pth \
+  --model-name molclr_gcn \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --batch-size 256 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/molclr_gcn.full.log
+
+conda activate plantfm_molclr
+cd /private/vina/model_repos/MolCLR
+
+
+python /private/vina/FM_bench/src/modeling/extract_molclr_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --model-type gin \
+  --ckpt /private/vina/model_repos/MolCLR/ckpt/pretrained_gin/checkpoints/model.pth \
+  --model-name molclr_gin \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --batch-size 256 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/molclr_gin.full.log
+
+
+conda activate plantfm_nafm
+cd /private/vina/model_repos/NaFM/NaFM-Official
+export PYTHONPATH=$PWD:$PYTHONPATH
+
+python /private/vina/FM_bench/src/modeling/extract_nafm_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --ckpt /private/vina/model_repos/NaFM/NaFM-Official/NaFM.ckpt \
+  --model-name nafm_contrast \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --embedding-type contrast \
+  --batch-size 128 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/nafm_contrast.full.log
+
+conda activate plantfm_nafm
+cd /private/vina/model_repos/NaFM/NaFM-Official
+export PYTHONPATH=$PWD:$PYTHONPATH
+
+python /private/vina/FM_bench/src/modeling/extract_nafm_embeddings.py \
+  --input /private/vina/FM_bench/data/master/compounds_master_bao.tsv \
+  --ckpt /private/vina/model_repos/NaFM/NaFM-Official/NaFM.ckpt \
+  --model-name nafm_graph_mean \
+  --out-dir /private/vina/FM_bench/data/features/bao_plant_pathway/full \
+  --embedding-type graph_mean \
+  --batch-size 128 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/nafm_graph_mean.full.log
+
+conda activate plantfm_graphmvp
+cd /private/vina/FM_bench
+
+python src/modeling/extract_graphmvp_embeddings.py \
+  --input data/master/compounds_master_bao.tsv \
+  --repo-dir /private/vina/model_repos/GraphMVP \
+  --ckpt /private/vina/model_repos/GraphMVP/pretrained/graphmvp_classification_simple_m015_t02/model.pth \
+  --model-name graphmvp_gin \
+  --out-dir data/features/bao_plant_pathway/full \
+  --batch-size 256 \
+  --device auto \
+  --overwrite
+
+conda activate plantfm_molebert
+cd /private/vina/FM_bench
+
+python src/modeling/extract_molebert_embeddings.py \
+  --input data/master/compounds_master_bao.tsv \
+  --repo-dir /private/vina/model_repos/Mole-BERT \
+  --ckpt /private/vina/model_repos/Mole-BERT/model_gin/Mole-BERT.pth \
+  --model-name molebert_gin \
+  --out-dir data/features/bao_plant_pathway/full \
+  --batch-size 256 \
+  --device auto \
+  --overwrite
+
+
+## NPlikeliness
+
+cd /private/vina/FM_bench
+conda activate plantfm_chemberta_hf
+
+python src/modeling/extract_hf_smiles_embeddings.py \
+  --input data/tasks/np_likeness/np_likeness_task.tsv \
+  --model-dir /private/vina/model_repos/ChemBERTa-77M-MLM \
+  --model-name chemberta_77m_mlm \
+  --out-dir data/features/np_likeness \
+  --model-class auto \
+  --batch-size 128 \
+  --max-length 256 \
+  --local-files-only \
+  2>&1 | tee logs/feature_extraction/np_likeness/chemberta_77m_mlm.log
+
+
+python src/modeling/extract_hf_smiles_embeddings.py \
+  --input data/tasks/np_likeness/np_likeness_task.tsv \
+  --model-dir /private/vina/model_repos/ChemBERTa-100M-MLM \
+  --model-name chemberta_100m_mlm \
+  --out-dir data/features/np_likeness \
+  --model-class auto \
+  --batch-size 64 \
+  --max-length 256 \
+  --local-files-only \
+  2>&1 | tee logs/feature_extraction/np_likeness/chemberta_100m_mlm.log
+
+conda activate plantfm_chemberta_hf
+python src/modeling/extract_hf_smiles_embeddings.py \
+  --input data/tasks/np_likeness/np_likeness_task.tsv \
+  --model-dir /private/vina/model_repos/MoLFormer-c3-1.1B \
+  --model-name molformer_c3_1_1b \
+  --out-dir data/features/np_likeness \
+  --model-class mlm \
+  --trust-remote-code \
+  --local-files-only \
+  --batch-size 32 \
+  --max-length 256 \
+  2>&1 | tee logs/feature_extraction/np_likeness/molformer_c3_1_1b.log
+
+conda activate plantfm_nafm
+python /private/vina/FM_bench/src/modeling/extract_nafm_embeddings.py \
+  --input /private/vina/FM_bench/data/tasks/np_likeness/np_likeness_task.tsv \
+  --ckpt /private/vina/model_repos/NaFM/NaFM-Official/NaFM.ckpt \
+  --model-name nafm_graph_mean \
+  --out-dir /private/vina/FM_bench/data/features/np_likeness \
+  --embedding-type graph_mean \
+  --batch-size 128 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/np_likeness/nafm_graph_mean.log
+
+
+conda activate plantfm_molclr
+python /private/vina/FM_bench/src/modeling/extract_molclr_embeddings.py \
+  --input /private/vina/FM_bench/data/tasks/np_likeness/np_likeness_task.tsv \
+  --model-type gcn \
+  --ckpt /private/vina/model_repos/MolCLR/ckpt/pretrained_gcn/checkpoints/model.pth \
+  --model-name molclr_gcn \
+  --out-dir /private/vina/FM_bench/data/features/np_likeness \
+  --batch-size 256 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/np_likeness/molclr_gcn.log
+
+
+python /private/vina/FM_bench/src/modeling/extract_molclr_embeddings.py \
+  --input /private/vina/FM_bench/data/tasks/np_likeness/np_likeness_task.tsv \
+  --model-type gin \
+  --ckpt /private/vina/model_repos/MolCLR/ckpt/pretrained_gin/checkpoints/model.pth \
+  --model-name molclr_gin \
+  --out-dir /private/vina/FM_bench/data/features/np_likeness \
+  --batch-size 256 \
+  2>&1 | tee /private/vina/FM_bench/logs/feature_extraction/np_likeness/molclr_gin.log
+
+conda activate plantfm_graphmvp
+python /private/vina/FM_bench/src/modeling/extract_graphmvp_embeddings.py \
+  --input data/tasks/np_likeness/np_likeness_task.tsv \
+  --repo-dir /private/vina/model_repos/GraphMVP \
+  --ckpt /private/vina/model_repos/GraphMVP/pretrained/graphmvp_classification_simple_m015_t02/model.pth \
+  --model-name graphmvp_gin \
+  --out-dir data/features/np_likeness \
+  --batch-size 256 \
+  --device auto \
+  2>&1 | tee logs/feature_extraction/np_likeness/graphmvp_gin.log
+
+conda activate plantfm_molebert
+python /private/vina/FM_bench/src/modeling/extract_molebert_embeddings.py \
+  --input data/tasks/np_likeness/np_likeness_task.tsv \
+  --repo-dir /private/vina/model_repos/Mole-BERT \
+  --ckpt /private/vina/model_repos/Mole-BERT/model_gin/Mole-BERT.pth \
+  --model-name molebert_gin \
+  --out-dir data/features/np_likeness \
+  --batch-size 256 \
+  --device auto \
+  2>&1 | tee logs/feature_extraction/np_likeness/molebert_gin.log

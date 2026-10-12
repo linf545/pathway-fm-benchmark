@@ -14,3 +14,42 @@ python src/modeling/np_classification/run_npclassification_full.py \
 
 
 
+
+python src/modeling/np_classification/finetune_npclassification_lora_v2.py \
+  --model-name-or-path /private/vina/model_repos/ChemBERTa-77M-MLM \
+  --feature-name chemberta_77m_mlm \
+  --adaptation-modes lora \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --epochs 5 \
+  --train-batch-size 64 \
+  --eval-batch-size 128 \
+  --lora-learning-rate 1e-4 \
+  --head-learning-rate 1e-3 \
+  --class-weight-mode balanced \
+  --precision bf16 \
+  --gradient-checkpointing \
+  --local-files-only \
+  --resume
+
+
+
+python src/modeling/np_classification/finetune_npclassification_lora_v2.py \
+  --model-name-or-path /private/vina/model_repos/MoLFormer-c3-1.1B \
+  --feature-name molformer_c3_1_1b \
+  --adaptation-modes lora \
+  --split-mode both \
+  --split-seeds 2026 2027 2028 2029 2030 \
+  --epochs 5 \
+  --train-batch-size 64 \
+  --eval-batch-size 128 \
+  --lora-learning-rate 1e-4 \
+  --head-learning-rate 1e-3 \
+  --lora-target-modules query value \
+  --max-length 202 \
+  --class-weight-mode balanced \
+  --precision bf16 \
+  --gradient-checkpointing \
+  --trust-remote-code \
+  --local-files-only \
+  --resume

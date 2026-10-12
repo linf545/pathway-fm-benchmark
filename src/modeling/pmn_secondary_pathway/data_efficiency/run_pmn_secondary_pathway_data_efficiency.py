@@ -24,7 +24,7 @@ Representations
 
 Model selection
 ---------------
-- Logistic-regression C is selected using validation macro-AUPRC.
+- Logistic-regression C is selected using validation macro-AUROC, with macro-AUPRC as a tie-breaker.
 - A single global decision threshold is selected using validation macro-F1.
 - The fixed external test set is used only for final evaluation.
 """
@@ -71,7 +71,7 @@ except ImportError as exc:
     ) from exc
 
 
-SCRIPT_VERSION = "pmn_secondary_pathway_data_efficiency_repeated_splits_v1"
+SCRIPT_VERSION = "pmn_secondary_pathway_data_efficiency_repeated_splits_v2_auroc_tuning"
 TASK_NAME = "pmn_secondary_pathway"
 EXTERNAL_EVAL_NAME = "bao_B_external_test"
 
@@ -427,7 +427,7 @@ def evaluate_feature(
                 "classifier": "one_vs_rest_logistic_regression",
                 "C_grid": "|".join(str(float(C)) for C in C_grid),
                 "selected_C": selected["selected_C"],
-                "C_selection_metric": "validation_macro_auprc",
+                "C_selection_metric": "validation_macro_auroc",
                 "validation_macro_auprc_for_selected_C": selected[
                     "validation_macro_auprc_for_C"
                 ],
@@ -750,10 +750,10 @@ def main():
             "requested_n_per_label",
             "mean_n_train",
             "n_split_replicates",
-            "macro_auprc_mean",
-            "macro_auprc_sd",
-            "macro_auprc_se",
             "macro_auroc_mean",
+            "macro_auroc_sd",
+            "macro_auroc_se",
+            "macro_auprc_mean",
             "macro_f1_mean",
             "macro_f1_se",
         ]
@@ -768,7 +768,7 @@ def main():
                 [
                     "split_mode",
                     "requested_n_per_label",
-                    "macro_auprc_mean",
+                    "macro_auroc_mean",
                 ],
                 ascending=[True, True, False],
             )[display_columns].to_string(index=False)

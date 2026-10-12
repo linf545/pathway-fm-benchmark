@@ -33,7 +33,7 @@ from run_kegg_pathway_data_efficiency import (  # noqa: E402
     tune_threshold,
 )
 
-SCRIPT_VERSION = "kegg_pathway_full_ensemble_repeated_splits_v5"
+SCRIPT_VERSION = "kegg_pathway_full_ensemble_repeated_splits_v6_auroc_tuning"
 
 # Full-training ensemble defaults are intentionally broader than the
 # data-efficiency defaults. Exclude nafm_contrast by default because it is the
@@ -181,7 +181,7 @@ def parse_args():
         nargs="+",
         type=float,
         default=[0.01, 0.1, 1.0],
-        help="Logistic-regression C candidates. Selected using validation macro-AUPRC.",
+        help="Logistic-regression C candidates. Selected using validation macro-AUROC.",
     )
     parser.add_argument(
         "--threshold-grid",
@@ -356,7 +356,7 @@ def main():
         print(f"\n=== Evaluating split_mode={split_mode} split_seed={split_seed} ===")
         probability_store = {eval_set: {} for eval_set in eval_masks}
 
-        # Individual models: tune C by validation macro-AUPRC, then tune threshold by validation macro-F1.
+        # Individual models: tune C by validation macro-AUROC, then tune threshold by validation macro-F1.
         for feature_name in individual_features:
             X = feature_matrices[feature_name]
             feature_type = feature_types[feature_name]
@@ -376,7 +376,7 @@ def main():
             metadata = {
                 "C_grid": "|".join(str(float(c)) for c in args.C_grid),
                 "selected_C": selected["selected_C"],
-                "C_selection_metric": "validation_macro_auprc",
+                "C_selection_metric": "validation_macro_auroc",
                 "validation_macro_auprc_for_selected_C": selected["validation_macro_auprc_for_C"],
                 "validation_macro_auroc_for_selected_C": selected["validation_macro_auroc_for_C"],
                 "threshold_strategy": "global_threshold_tuned_on_validation_macro_f1",
@@ -430,7 +430,7 @@ def main():
             metadata = {
                 "C_grid": "base_models_independently_tuned",
                 "selected_C": np.nan,
-                "C_selection_metric": "base_models_validation_macro_auprc",
+                "C_selection_metric": "base_models_validation_macro_auroc",
                 "validation_macro_auprc_for_selected_C": np.nan,
                 "validation_macro_auroc_for_selected_C": np.nan,
                 "threshold_strategy": "global_threshold_tuned_on_validation_macro_f1",
@@ -506,17 +506,17 @@ def main():
             "split_mode",
             "feature",
             "n_split_replicates",
-            "macro_auprc_mean",
-            "macro_auprc_sd",
-            "macro_auprc_se",
             "macro_auroc_mean",
+            "macro_auroc_sd",
+            "macro_auroc_se",
+            "macro_auprc_mean",
             "macro_f1_mean",
             "macro_f1_se",
         ]
         display_cols = [c for c in display_cols if c in main_stats.columns]
         print(
             main_stats.sort_values(
-                ["split_mode", "macro_auprc_mean"], ascending=[True, False]
+                ["split_mode", "macro_auroc_mean"], ascending=[True, False]
             )[display_cols].to_string(index=False)
         )
 
