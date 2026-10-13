@@ -40,6 +40,3 @@ The workflow is organized by task:
 3. **Run benchmarks:** see the `usage.txt` or `usage.sh` files in each `src/modeling/<task>/` directory.
 4. **Generate figures:** see `src/analysis/make_figures/usage.sh`.
 
-## Data and results
-
-The repository does not include raw datasets, large embedding files, pretrained model checkpoints, or experiment outputs in `results/`. These inputs and outputs must be supplied separately to reproduce the analyses.
