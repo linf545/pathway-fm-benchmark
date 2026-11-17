@@ -1,0 +1,71 @@
+{
+  "core_configuration": {
+    "C_grid": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "class_weight": "none",
+    "feature_dir": "data/features/plantcyc_reaction_neighbor",
+    "features": [
+      "morgan_r2_2048",
+      "morgan_r3_2048",
+      "chemberta_77m_mlm",
+      "chemberta_100m_mlm",
+      "molformer_c3_1_1b",
+      "nafm_graph_mean",
+      "molclr_gcn",
+      "molclr_gin",
+      "graphmvp_gin",
+      "molebert_gin"
+    ],
+    "max_iter": 3000,
+    "model_seed_base": 2026,
+    "pair_index_dir": "data/features/plantcyc_reaction_neighbor/pair_indices",
+    "sampling_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "save_predictions": false,
+    "schemes": [
+      "random",
+      "scaffold_pair"
+    ],
+    "selection_metric": "auroc",
+    "solver": "lbfgs",
+    "split_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "threshold_grid": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "tol": 0.001,
+    "train_sizes": [
+      10,
+      30,
+      100,
+      300,
+      1000,
+      3000
+    ],
+    "variants": [
+      "easy",
+      "hard",
+      "mixed"
+    ]
+  },
+  "implementation": "standalone_v2",
+  "save_predictions": false,
+  "script_version": "plantcyc_reaction_neighbor_data_efficiency_standalone_v2"
+}

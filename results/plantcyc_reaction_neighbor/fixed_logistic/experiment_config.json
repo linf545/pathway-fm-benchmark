@@ -1,0 +1,40 @@
+{
+  "C": 1.0,
+  "descriptor_preprocessing": "training-compound median imputation followed by training-compound standardization before pair construction",
+  "features": [
+    "morgan_r2_2048",
+    "morgan_r3_2048",
+    "rdkit_descriptors",
+    "chemberta_77m_mlm",
+    "chemberta_100m_mlm",
+    "molformer_c3_1_1b",
+    "molclr_gcn",
+    "molclr_gin",
+    "nafm_contrast",
+    "nafm_graph_mean"
+  ],
+  "max_iter": 1000,
+  "morgan_equivalent": [
+    "xor",
+    "and"
+  ],
+  "n_compounds": 3970,
+  "pair_representation": [
+    "absolute_difference",
+    "elementwise_product"
+  ],
+  "schemes": [
+    "random",
+    "scaffold_pair"
+  ],
+  "seed": 63,
+  "solver": "liblinear",
+  "task": "plantcyc_reaction_neighbor",
+  "threshold_selection": "validation threshold maximizing binary F1; ties broken by MCC and proximity to 0.5",
+  "tol": 0.0001,
+  "variants": [
+    "easy",
+    "hard",
+    "mixed"
+  ]
+}
