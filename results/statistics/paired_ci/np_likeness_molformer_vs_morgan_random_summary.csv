@@ -1,0 +1,2 @@
+model_a,model_b,metric,n_complete_seeds,mean_model_a,mean_model_b,mean_paired_difference,sd_paired_difference,standard_error,confidence_level,t_critical,ci_lower,ci_upper
+molformer_c3_1_1b,morgan_r2_2048,auroc,5,0.9421296480375452,0.9413420531899142,0.000787594847630979,0.0009360876671058343,0.00041863113130956786,0.95,2.7764451051977987,-0.0003747115077768876,0.0019499012030388457

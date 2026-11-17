@@ -1,0 +1,2 @@
+model_a,model_b,metric,n_complete_seeds,mean_model_a,mean_model_b,mean_paired_difference,sd_paired_difference,standard_error,confidence_level,t_critical,ci_lower,ci_upper
+chemberta_77m_mlm,morgan_r2_2048,auroc_ovr_macro,5,0.9060000930719804,0.8616018925680284,0.044398200503951976,0.012243477602399832,0.0054754496399924335,0.95,2.7764451051977987,0.029195915152237933,0.05960048585566602

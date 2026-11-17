@@ -1,0 +1,2 @@
+model_a,model_b,metric,n_complete_seeds,mean_model_a,mean_model_b,mean_paired_difference,sd_paired_difference,standard_error,confidence_level,t_critical,ci_lower,ci_upper
+ensemble_morgan_r2_plus_graphmvp_gin,morgan_r2_2048,macro_auroc,5,0.9173183160855907,0.9031193872505453,0.014198928835045522,0.005967709938168219,0.002668841018349041,0.95,2.7764451051977987,0.0067890382530992185,0.021608819416991824
