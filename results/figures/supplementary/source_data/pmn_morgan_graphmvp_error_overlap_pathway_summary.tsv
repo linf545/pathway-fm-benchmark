@@ -1,0 +1,217 @@
+split_mode	eval_set	error_type	component	pathway_index	pathway	pathway_label	n_split_seeds	n_errors_mean	n_errors_sd
+random	bao_B_external_test	false_negative	graphmvp_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	1.0	0.7071067811865476
+random	bao_B_external_test	false_negative	graphmvp_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	5.8	1.6431676725154982
+random	bao_B_external_test	false_negative	graphmvp_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	24.8	2.6832815729997477
+random	bao_B_external_test	false_negative	graphmvp_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	14.2	2.280350850198276
+random	bao_B_external_test	false_negative	graphmvp_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	0.6	0.8944271909999159
+random	bao_B_external_test	false_negative	graphmvp_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	2.8	0.4472135954999579
+random	bao_B_external_test	false_negative	graphmvp_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	14.2	0.8366600265340758
+random	bao_B_external_test	false_negative	graphmvp_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	1.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	1.8	0.8366600265340756
+random	bao_B_external_test	false_negative	graphmvp_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	0.6	0.5477225575051661
+random	bao_B_external_test	false_negative	graphmvp_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	1.6	0.8944271909999159
+random	bao_B_external_test	false_negative	graphmvp_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	graphmvp_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	0.8	0.4472135954999579
+random	bao_B_external_test	false_negative	morgan_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	6.6	3.646916505762094
+random	bao_B_external_test	false_negative	morgan_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	3.6	1.140175425099138
+random	bao_B_external_test	false_negative	morgan_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	1.2	0.4472135954999579
+random	bao_B_external_test	false_negative	morgan_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.4	0.5477225575051661
+random	bao_B_external_test	false_negative	morgan_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	2.6	1.816590212458495
+random	bao_B_external_test	false_negative	morgan_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	2.2	0.8366600265340756
+random	bao_B_external_test	false_negative	morgan_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	3.2	0.447213595499958
+random	bao_B_external_test	false_negative	morgan_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.2	0.8366600265340756
+random	bao_B_external_test	false_negative	morgan_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	0.4	0.5477225575051661
+random	bao_B_external_test	false_negative	morgan_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	morgan_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	0.8	0.4472135954999579
+random	bao_B_external_test	false_negative	morgan_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	shared	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	4.6	0.547722557505166
+random	bao_B_external_test	false_negative	shared	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_negative	shared	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	35.0	1.5811388300841898
+random	bao_B_external_test	false_negative	shared	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	9.0	2.8284271247461903
+random	bao_B_external_test	false_negative	shared	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	6.4	1.5165750888103102
+random	bao_B_external_test	false_negative	shared	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	2.8	0.44721359549995787
+random	bao_B_external_test	false_negative	shared	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	2.6	0.5477225575051661
+random	bao_B_external_test	false_negative	shared	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	0.8	0.4472135954999579
+random	bao_B_external_test	false_negative	shared	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	0.8	1.0954451150103321
+random	bao_B_external_test	false_negative	shared	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	8.8	0.44721359549995815
+random	bao_B_external_test	false_negative	shared	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	1.0	0.0
+random	bao_B_external_test	false_negative	shared	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	6.2	0.44721359549995787
+random	bao_B_external_test	false_negative	shared	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	1.4	0.5477225575051662
+random	bao_B_external_test	false_negative	shared	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.0	1.0
+random	bao_B_external_test	false_negative	shared	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	0.6	0.8944271909999159
+random	bao_B_external_test	false_negative	shared	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.0	0.0
+random	bao_B_external_test	false_negative	shared	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	2.2	0.4472135954999579
+random	bao_B_external_test	false_negative	shared	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	2.0	0.0
+random	bao_B_external_test	false_positive	graphmvp_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	3.8	1.3038404810405297
+random	bao_B_external_test	false_positive	graphmvp_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	16.0	1.5811388300841898
+random	bao_B_external_test	false_positive	graphmvp_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	5.6	1.51657508881031
+random	bao_B_external_test	false_positive	graphmvp_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	6.0	2.0
+random	bao_B_external_test	false_positive	graphmvp_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	8.0	1.224744871391589
+random	bao_B_external_test	false_positive	graphmvp_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	14.4	1.6733200530681511
+random	bao_B_external_test	false_positive	graphmvp_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	7.4	2.0736441353327724
+random	bao_B_external_test	false_positive	graphmvp_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	8.0	2.1213203435596424
+random	bao_B_external_test	false_positive	graphmvp_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	4.8	1.3038404810405297
+random	bao_B_external_test	false_positive	graphmvp_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	12.4	2.4083189157584592
+random	bao_B_external_test	false_positive	graphmvp_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	8.2	0.8366600265340755
+random	bao_B_external_test	false_positive	graphmvp_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	14.2	0.8366600265340757
+random	bao_B_external_test	false_positive	graphmvp_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	9.8	1.30384048104053
+random	bao_B_external_test	false_positive	graphmvp_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	8.2	2.588435821108957
+random	bao_B_external_test	false_positive	graphmvp_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	19.0	3.082207001484488
+random	bao_B_external_test	false_positive	graphmvp_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	9.6	0.5477225575051662
+random	bao_B_external_test	false_positive	graphmvp_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	5.0	1.8708286933869707
+random	bao_B_external_test	false_positive	graphmvp_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	10.8	1.0954451150103321
+random	bao_B_external_test	false_positive	morgan_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	1.4	0.5477225575051661
+random	bao_B_external_test	false_positive	morgan_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.0	0.0
+random	bao_B_external_test	false_positive	morgan_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	6.2	3.96232255123179
+random	bao_B_external_test	false_positive	morgan_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	13.4	4.560701700396551
+random	bao_B_external_test	false_positive	morgan_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	7.8	3.5637059362410923
+random	bao_B_external_test	false_positive	morgan_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	2.0	1.0
+random	bao_B_external_test	false_positive	morgan_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.4	0.5477225575051662
+random	bao_B_external_test	false_positive	morgan_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	1.2	0.8366600265340756
+random	bao_B_external_test	false_positive	morgan_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	2.6	0.8944271909999159
+random	bao_B_external_test	false_positive	morgan_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	4.2	2.4899799195977463
+random	bao_B_external_test	false_positive	morgan_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	2.4	2.073644135332772
+random	bao_B_external_test	false_positive	morgan_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	13.2	7.9498427657407165
+random	bao_B_external_test	false_positive	morgan_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	0.4	0.5477225575051661
+random	bao_B_external_test	false_positive	morgan_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.0	1.224744871391589
+random	bao_B_external_test	false_positive	morgan_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	4.6	2.6076809620810595
+random	bao_B_external_test	false_positive	morgan_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.2	0.4472135954999579
+random	bao_B_external_test	false_positive	morgan_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	0.4	0.5477225575051662
+random	bao_B_external_test	false_positive	morgan_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	4.2	0.8366600265340756
+random	bao_B_external_test	false_positive	shared	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	3.6	0.8944271909999159
+random	bao_B_external_test	false_positive	shared	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.2	0.4472135954999579
+random	bao_B_external_test	false_positive	shared	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	1.2	1.3038404810405297
+random	bao_B_external_test	false_positive	shared	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	3.6	2.073644135332772
+random	bao_B_external_test	false_positive	shared	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	3.4	0.5477225575051662
+random	bao_B_external_test	false_positive	shared	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	4.6	1.1401754250991378
+random	bao_B_external_test	false_positive	shared	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.8	0.4472135954999579
+random	bao_B_external_test	false_positive	shared	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	2.0	0.7071067811865476
+random	bao_B_external_test	false_positive	shared	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	0.8	0.4472135954999579
+random	bao_B_external_test	false_positive	shared	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	30.4	2.3021728866442683
+random	bao_B_external_test	false_positive	shared	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	2.4	0.8944271909999159
+random	bao_B_external_test	false_positive	shared	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	2.8	1.7888543819998317
+random	bao_B_external_test	false_positive	shared	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	5.2	1.7888543819998317
+random	bao_B_external_test	false_positive	shared	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.2	1.0954451150103321
+random	bao_B_external_test	false_positive	shared	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	9.2	1.0954451150103324
+random	bao_B_external_test	false_positive	shared	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.8	0.4472135954999579
+random	bao_B_external_test	false_positive	shared	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	3.4	0.5477225575051662
+random	bao_B_external_test	false_positive	shared	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	1.2	0.8366600265340756
+scaffold	bao_B_external_test	false_negative	graphmvp_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	0.8	0.8366600265340756
+scaffold	bao_B_external_test	false_negative	graphmvp_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.2	0.447213595499958
+scaffold	bao_B_external_test	false_negative	graphmvp_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	6.6	2.073644135332772
+scaffold	bao_B_external_test	false_negative	graphmvp_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	29.8	6.534523701081817
+scaffold	bao_B_external_test	false_negative	graphmvp_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	16.4	3.4351128074635335
+scaffold	bao_B_external_test	false_negative	graphmvp_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	1.2	1.0954451150103324
+scaffold	bao_B_external_test	false_negative	graphmvp_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.4	0.5477225575051661
+scaffold	bao_B_external_test	false_negative	graphmvp_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	2.2	1.0954451150103324
+scaffold	bao_B_external_test	false_negative	graphmvp_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	graphmvp_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	12.0	2.5495097567963922
+scaffold	bao_B_external_test	false_negative	graphmvp_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	0.4	0.5477225575051661
+scaffold	bao_B_external_test	false_negative	graphmvp_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	2.4	1.816590212458495
+scaffold	bao_B_external_test	false_negative	graphmvp_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	0.8	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	graphmvp_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	graphmvp_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	1.4	1.51657508881031
+scaffold	bao_B_external_test	false_negative	graphmvp_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	graphmvp_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	0.2	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	graphmvp_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	morgan_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	1.0	1.0
+scaffold	bao_B_external_test	false_negative	morgan_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	morgan_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	0.6	0.5477225575051661
+scaffold	bao_B_external_test	false_negative	morgan_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	3.8	3.1144823004794877
+scaffold	bao_B_external_test	false_negative	morgan_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	2.8	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	morgan_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	1.4	0.5477225575051661
+scaffold	bao_B_external_test	false_negative	morgan_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.8	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	morgan_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	0.2	0.447213595499958
+scaffold	bao_B_external_test	false_negative	morgan_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	2.0	1.224744871391589
+scaffold	bao_B_external_test	false_negative	morgan_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	1.8	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	morgan_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	morgan_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	1.2	1.3038404810405297
+scaffold	bao_B_external_test	false_negative	morgan_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	morgan_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	0.6	0.5477225575051661
+scaffold	bao_B_external_test	false_negative	morgan_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	0.2	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	morgan_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	morgan_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	1.0	0.7071067811865476
+scaffold	bao_B_external_test	false_negative	morgan_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	shared	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	2.4	1.140175425099138
+scaffold	bao_B_external_test	false_negative	shared	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.4	0.894427190999916
+scaffold	bao_B_external_test	false_negative	shared	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	34.8	2.588435821108957
+scaffold	bao_B_external_test	false_negative	shared	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	6.4	3.974921382870358
+scaffold	bao_B_external_test	false_negative	shared	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	5.2	1.7888543819998317
+scaffold	bao_B_external_test	false_negative	shared	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	1.8	1.0954451150103324
+scaffold	bao_B_external_test	false_negative	shared	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	1.8	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	shared	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	2.6	1.3416407864998738
+scaffold	bao_B_external_test	false_negative	shared	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	shared	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	9.6	2.408318915758459
+scaffold	bao_B_external_test	false_negative	shared	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	1.0	0.0
+scaffold	bao_B_external_test	false_negative	shared	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	6.6	1.816590212458495
+scaffold	bao_B_external_test	false_negative	shared	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	1.2	0.4472135954999579
+scaffold	bao_B_external_test	false_negative	shared	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.8	0.8366600265340756
+scaffold	bao_B_external_test	false_negative	shared	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	0.2	0.447213595499958
+scaffold	bao_B_external_test	false_negative	shared	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	0.0	0.0
+scaffold	bao_B_external_test	false_negative	shared	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	2.0	0.7071067811865476
+scaffold	bao_B_external_test	false_negative	shared	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	2.0	0.0
+scaffold	bao_B_external_test	false_positive	graphmvp_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	5.2	2.04939015319192
+scaffold	bao_B_external_test	false_positive	graphmvp_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	14.6	3.1304951684997055
+scaffold	bao_B_external_test	false_positive	graphmvp_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	4.6	1.6733200530681511
+scaffold	bao_B_external_test	false_positive	graphmvp_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	3.4	1.673320053068151
+scaffold	bao_B_external_test	false_positive	graphmvp_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	6.0	2.23606797749979
+scaffold	bao_B_external_test	false_positive	graphmvp_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	14.4	1.673320053068151
+scaffold	bao_B_external_test	false_positive	graphmvp_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	7.0	0.7071067811865475
+scaffold	bao_B_external_test	false_positive	graphmvp_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	5.6	1.3416407864998738
+scaffold	bao_B_external_test	false_positive	graphmvp_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	3.2	1.3038404810405297
+scaffold	bao_B_external_test	false_positive	graphmvp_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	6.8	0.44721359549995787
+scaffold	bao_B_external_test	false_positive	graphmvp_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	8.0	1.2247448713915892
+scaffold	bao_B_external_test	false_positive	graphmvp_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	11.2	1.7888543819998317
+scaffold	bao_B_external_test	false_positive	graphmvp_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	8.4	2.3021728866442674
+scaffold	bao_B_external_test	false_positive	graphmvp_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	10.6	8.142481194328912
+scaffold	bao_B_external_test	false_positive	graphmvp_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	10.2	3.2710854467592254
+scaffold	bao_B_external_test	false_positive	graphmvp_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	9.0	1.5811388300841898
+scaffold	bao_B_external_test	false_positive	graphmvp_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	4.8	1.3038404810405297
+scaffold	bao_B_external_test	false_positive	graphmvp_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	8.8	3.8340579025361627
+scaffold	bao_B_external_test	false_positive	morgan_only	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	1.6	2.3021728866442674
+scaffold	bao_B_external_test	false_positive	morgan_only	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	0.0	0.0
+scaffold	bao_B_external_test	false_positive	morgan_only	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	12.0	6.442049363362563
+scaffold	bao_B_external_test	false_positive	morgan_only	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	17.2	8.197560612767678
+scaffold	bao_B_external_test	false_positive	morgan_only	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	11.2	7.259476565152615
+scaffold	bao_B_external_test	false_positive	morgan_only	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	3.4	2.073644135332772
+scaffold	bao_B_external_test	false_positive	morgan_only	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	0.8	1.0954451150103321
+scaffold	bao_B_external_test	false_positive	morgan_only	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	1.8	2.04939015319192
+scaffold	bao_B_external_test	false_positive	morgan_only	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	3.8	2.280350850198276
+scaffold	bao_B_external_test	false_positive	morgan_only	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	8.0	8.0
+scaffold	bao_B_external_test	false_positive	morgan_only	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	4.4	3.3615472627943226
+scaffold	bao_B_external_test	false_positive	morgan_only	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	18.8	10.134100848126586
+scaffold	bao_B_external_test	false_positive	morgan_only	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	1.2	1.6431676725154984
+scaffold	bao_B_external_test	false_positive	morgan_only	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.6	1.816590212458495
+scaffold	bao_B_external_test	false_positive	morgan_only	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	8.0	5.0990195135927845
+scaffold	bao_B_external_test	false_positive	morgan_only	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	2.2	3.3466401061363023
+scaffold	bao_B_external_test	false_positive	morgan_only	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	1.4	2.073644135332772
+scaffold	bao_B_external_test	false_positive	morgan_only	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	6.0	2.9154759474226504
+scaffold	bao_B_external_test	false_positive	shared	0	label_0_Aroma_Compound_Biosynthesis	0 Aroma Compound Biosynthesis	5	3.6	0.8944271909999159
+scaffold	bao_B_external_test	false_positive	shared	1	label_1_Fatty_Acid_Derivative_Biosynthesis	1 Fatty Acid Derivative Biosynthesis	5	1.0	1.4142135623730951
+scaffold	bao_B_external_test	false_positive	shared	2	label_2_Hormone_Biosynthesis	2 Hormone Biosynthesis	5	2.0	1.224744871391589
+scaffold	bao_B_external_test	false_positive	shared	3	label_3_Nitrogen_Containing_Secondary_Compound_Biosynthesis	3 Nitrogen Containing Secondary Compound Biosynthesis	5	6.0	3.24037034920393
+scaffold	bao_B_external_test	false_positive	shared	4	label_4_Phenylpropanoid_Derivative_Biosynthesis	4 Phenylpropanoid Derivative Biosynthesis	5	5.6	1.816590212458495
+scaffold	bao_B_external_test	false_positive	shared	5	label_5_Polyketide_Biosynthesis	5 Polyketide Biosynthesis	5	4.0	1.8708286933869707
+scaffold	bao_B_external_test	false_positive	shared	6	label_6_Siderophore_and_Metallophore_Biosynthesis	6 Siderophore and Metallophore Biosynthesis	5	1.4	0.8944271909999159
+scaffold	bao_B_external_test	false_positive	shared	7	label_7_Sugar_Derivative_Biosynthesis	7 Sugar Derivative Biosynthesis	5	2.8	0.8366600265340756
+scaffold	bao_B_external_test	false_positive	shared	8	label_8_Sulfur_Containing_Secondary_Compound_Biosynthesis	8 Sulfur Containing Secondary Compound Biosynthesis	5	1.0	0.7071067811865476
+scaffold	bao_B_external_test	false_positive	shared	9	label_9_Terpenoid_Biosynthesis	9 Terpenoid Biosynthesis	5	36.4	1.1401754250991383
+scaffold	bao_B_external_test	false_positive	shared	10	label_10_Terpenophenolic_Biosynthesis	10 Terpenophenolic Biosynthesis	5	0.6	1.3416407864998738
+scaffold	bao_B_external_test	false_positive	shared	11	label_11_Toxin_Biosynthesis	11 Toxin Biosynthesis	5	5.6	3.5071355833500366
+scaffold	bao_B_external_test	false_positive	shared	12	label_12_Xanthone_Biosynthesis	12 Xanthone Biosynthesis	5	4.2	2.7748873851023217
+scaffold	bao_B_external_test	false_positive	shared	13	label_13_Flavonoid_Degradation	13 Flavonoid Degradation	5	1.8	1.4832396974191326
+scaffold	bao_B_external_test	false_positive	shared	14	label_14_Nitrogen_Containing_Secondary_Compound_Degradation	14 Nitrogen Containing Secondary Compound Degradation	5	16.2	4.324349662087931
+scaffold	bao_B_external_test	false_positive	shared	15	label_15_Phenylpropanoid_Derivative_Degradation	15 Phenylpropanoid Derivative Degradation	5	1.2	0.4472135954999579
+scaffold	bao_B_external_test	false_positive	shared	16	label_16_Sugar_Derivative_Degradation	16 Sugar Derivative Degradation	5	3.4	0.5477225575051661
+scaffold	bao_B_external_test	false_positive	shared	17	label_17_Terpenoid_Degradation	17 Terpenoid Degradation	5	3.2	1.7888543819998317

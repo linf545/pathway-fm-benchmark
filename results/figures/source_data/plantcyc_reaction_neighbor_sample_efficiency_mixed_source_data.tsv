@@ -1,0 +1,121 @@
+feature	feature_display_name	split_scheme	split_display_name	negative_variant	negative_variant_display_name	requested_n_train	auroc_mean	auroc_ci95_low	auroc_ci95_high	n_split_seeds	n_sampling_replicates_per_split_min	n_sampling_replicates_per_split_max	actual_n_train_mean
+chemberta_100m_mlm	ChemBERTa-100M	random	Random split	mixed	Mixed negatives	10	0.6084519740137243	0.5849816171907797	0.6319223308366689	5	5	5	10.0
+chemberta_100m_mlm	ChemBERTa-100M	random	Random split	mixed	Mixed negatives	30	0.6487333335770613	0.6394686595839041	0.6579980075702185	5	5	5	30.0
+chemberta_100m_mlm	ChemBERTa-100M	random	Random split	mixed	Mixed negatives	100	0.6772680044894692	0.6661145602474742	0.6884214487314643	5	5	5	100.0
+chemberta_100m_mlm	ChemBERTa-100M	random	Random split	mixed	Mixed negatives	300	0.7015500367419907	0.687663861461996	0.7154362120219854	5	5	5	300.0
+chemberta_100m_mlm	ChemBERTa-100M	random	Random split	mixed	Mixed negatives	1000	0.7287932906565665	0.7127986476987394	0.7447879336143937	5	5	5	1000.0
+chemberta_100m_mlm	ChemBERTa-100M	random	Random split	mixed	Mixed negatives	3000	0.7508485754709738	0.7338595136868559	0.7678376372550918	5	5	5	3000.0
+chemberta_100m_mlm	ChemBERTa-100M	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6153114311299012	0.5744850465951675	0.6561378156646348	5	5	5	10.0
+chemberta_100m_mlm	ChemBERTa-100M	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6481905726574771	0.6049149123661164	0.6914662329488379	5	5	5	30.0
+chemberta_100m_mlm	ChemBERTa-100M	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.6943124733929332	0.6778013385904751	0.7108236081953914	5	5	5	100.0
+chemberta_100m_mlm	ChemBERTa-100M	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7095325964093304	0.6869262813415439	0.732138911477117	5	5	5	300.0
+chemberta_100m_mlm	ChemBERTa-100M	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7178031737643311	0.6946887900816046	0.7409175574470577	5	5	5	1000.0
+chemberta_100m_mlm	ChemBERTa-100M	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7317217891692722	0.7123317535485316	0.7511118247900128	5	5	5	3000.0
+chemberta_77m_mlm	ChemBERTa-77M	random	Random split	mixed	Mixed negatives	10	0.6319674330692541	0.6000819701804592	0.663852895958049	5	5	5	10.0
+chemberta_77m_mlm	ChemBERTa-77M	random	Random split	mixed	Mixed negatives	30	0.6809950681646187	0.6516042827346266	0.7103858535946109	5	5	5	30.0
+chemberta_77m_mlm	ChemBERTa-77M	random	Random split	mixed	Mixed negatives	100	0.7197192985021698	0.7047002336847974	0.7347383633195421	5	5	5	100.0
+chemberta_77m_mlm	ChemBERTa-77M	random	Random split	mixed	Mixed negatives	300	0.7479526485308687	0.7374602486484797	0.7584450484132578	5	5	5	300.0
+chemberta_77m_mlm	ChemBERTa-77M	random	Random split	mixed	Mixed negatives	1000	0.7686701592884119	0.7597681889839049	0.7775721295929189	5	5	5	1000.0
+chemberta_77m_mlm	ChemBERTa-77M	random	Random split	mixed	Mixed negatives	3000	0.7872026000899357	0.7766413991542582	0.7977638010256132	5	5	5	3000.0
+chemberta_77m_mlm	ChemBERTa-77M	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6494602251875339	0.6195934548650536	0.6793269955100142	5	5	5	10.0
+chemberta_77m_mlm	ChemBERTa-77M	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6931286974648053	0.66205352178788	0.7242038731417306	5	5	5	30.0
+chemberta_77m_mlm	ChemBERTa-77M	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.7248011626370723	0.7022166434990272	0.7473856817751173	5	5	5	100.0
+chemberta_77m_mlm	ChemBERTa-77M	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.746848842500844	0.7218033922405058	0.7718942927611823	5	5	5	300.0
+chemberta_77m_mlm	ChemBERTa-77M	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7596884954712937	0.731928919287831	0.7874480716547564	5	5	5	1000.0
+chemberta_77m_mlm	ChemBERTa-77M	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7721516125717472	0.7496024996813897	0.7947007254621048	5	5	5	3000.0
+graphmvp_gin	GraphMVP-GIN	random	Random split	mixed	Mixed negatives	10	0.6159577960654994	0.5782494056980412	0.6536661864329576	5	5	5	10.0
+graphmvp_gin	GraphMVP-GIN	random	Random split	mixed	Mixed negatives	30	0.6697992534612417	0.6347841664677308	0.7048143404547526	5	5	5	30.0
+graphmvp_gin	GraphMVP-GIN	random	Random split	mixed	Mixed negatives	100	0.7034726116792004	0.6845741395906707	0.7223710837677301	5	5	5	100.0
+graphmvp_gin	GraphMVP-GIN	random	Random split	mixed	Mixed negatives	300	0.7353130381056487	0.7201525740691979	0.7504735021420996	5	5	5	300.0
+graphmvp_gin	GraphMVP-GIN	random	Random split	mixed	Mixed negatives	1000	0.7569180598766494	0.7350991643280329	0.7787369554252659	5	5	5	1000.0
+graphmvp_gin	GraphMVP-GIN	random	Random split	mixed	Mixed negatives	3000	0.7742955225954103	0.7640652762889851	0.7845257689018356	5	5	5	3000.0
+graphmvp_gin	GraphMVP-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6266384815255208	0.6069207577294746	0.646356205321567	5	5	5	10.0
+graphmvp_gin	GraphMVP-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6662199615390263	0.6303519778243728	0.7020879452536798	5	5	5	30.0
+graphmvp_gin	GraphMVP-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.7007356028243861	0.6845731404174469	0.7168980652313253	5	5	5	100.0
+graphmvp_gin	GraphMVP-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7188708327828423	0.7061580359868046	0.7315836295788799	5	5	5	300.0
+graphmvp_gin	GraphMVP-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7355394078184407	0.7171441856009965	0.753934630035885	5	5	5	1000.0
+graphmvp_gin	GraphMVP-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7502544002583638	0.7231206000856244	0.7773882004311031	5	5	5	3000.0
+molclr_gcn	MolCLR-GCN	random	Random split	mixed	Mixed negatives	10	0.5927051245023379	0.5572761105261869	0.628134138478489	5	5	5	10.0
+molclr_gcn	MolCLR-GCN	random	Random split	mixed	Mixed negatives	30	0.6328832408995024	0.6002266648090046	0.6655398169900003	5	5	5	30.0
+molclr_gcn	MolCLR-GCN	random	Random split	mixed	Mixed negatives	100	0.6708224722058722	0.6588868149332202	0.6827581294785242	5	5	5	100.0
+molclr_gcn	MolCLR-GCN	random	Random split	mixed	Mixed negatives	300	0.6902485659655833	0.6731281362509801	0.7073689956801864	5	5	5	300.0
+molclr_gcn	MolCLR-GCN	random	Random split	mixed	Mixed negatives	1000	0.7124943973033938	0.7000152966281322	0.7249734979786554	5	5	5	1000.0
+molclr_gcn	MolCLR-GCN	random	Random split	mixed	Mixed negatives	3000	0.7381313133159555	0.7250263306216546	0.7512362960102564	5	5	5	3000.0
+molclr_gcn	MolCLR-GCN	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.5893394107543929	0.559290234900559	0.6193885866082268	5	5	5	10.0
+molclr_gcn	MolCLR-GCN	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6380701986171665	0.6117698022999505	0.6643705949343826	5	5	5	30.0
+molclr_gcn	MolCLR-GCN	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.6657284831402944	0.6428209378287558	0.688636028451833	5	5	5	100.0
+molclr_gcn	MolCLR-GCN	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.6963246282350524	0.6749261458339957	0.717723110636109	5	5	5	300.0
+molclr_gcn	MolCLR-GCN	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.706316701164105	0.6841815225459537	0.7284518797822565	5	5	5	1000.0
+molclr_gcn	MolCLR-GCN	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7200660589245607	0.6967809163935432	0.7433512014555781	5	5	5	3000.0
+molclr_gin	MolCLR-GIN	random	Random split	mixed	Mixed negatives	10	0.6082013241740364	0.5714418925475846	0.6449607558004882	5	5	5	10.0
+molclr_gin	MolCLR-GIN	random	Random split	mixed	Mixed negatives	30	0.6545509982488147	0.6205605134027353	0.688541483094894	5	5	5	30.0
+molclr_gin	MolCLR-GIN	random	Random split	mixed	Mixed negatives	100	0.6932145403229639	0.6875058884561299	0.6989231921897979	5	5	5	100.0
+molclr_gin	MolCLR-GIN	random	Random split	mixed	Mixed negatives	300	0.7213633654932383	0.7109094702602025	0.7318172607262742	5	5	5	300.0
+molclr_gin	MolCLR-GIN	random	Random split	mixed	Mixed negatives	1000	0.7505693363409365	0.744585837231344	0.756552835450529	5	5	5	1000.0
+molclr_gin	MolCLR-GIN	random	Random split	mixed	Mixed negatives	3000	0.7768352167411864	0.771060590824201	0.7826098426581718	5	5	5	3000.0
+molclr_gin	MolCLR-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.637554058219932	0.6195680456398218	0.6555400708000423	5	5	5	10.0
+molclr_gin	MolCLR-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6800205516654189	0.6588214356890886	0.7012196676417491	5	5	5	30.0
+molclr_gin	MolCLR-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.7076992410563556	0.6954957709934965	0.7199027111192148	5	5	5	100.0
+molclr_gin	MolCLR-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7299274819805934	0.7074563034846159	0.752398660476571	5	5	5	300.0
+molclr_gin	MolCLR-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7532232351257321	0.7397368672426949	0.7667096030087692	5	5	5	1000.0
+molclr_gin	MolCLR-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7779979741929801	0.7687758825201575	0.7872200658658027	5	5	5	3000.0
+molebert_gin	Mole-BERT-GIN	random	Random split	mixed	Mixed negatives	10	0.5853409327712966	0.5654321912197895	0.6052496743228037	5	5	5	10.0
+molebert_gin	Mole-BERT-GIN	random	Random split	mixed	Mixed negatives	30	0.6451228206149986	0.6202862867645781	0.6699593544654191	5	5	5	30.0
+molebert_gin	Mole-BERT-GIN	random	Random split	mixed	Mixed negatives	100	0.6936001667099283	0.6778540654701837	0.7093462679496729	5	5	5	100.0
+molebert_gin	Mole-BERT-GIN	random	Random split	mixed	Mixed negatives	300	0.7197559308153798	0.7053824078395793	0.7341294537911803	5	5	5	300.0
+molebert_gin	Mole-BERT-GIN	random	Random split	mixed	Mixed negatives	1000	0.746932573876993	0.7336398279861678	0.7602253197678182	5	5	5	1000.0
+molebert_gin	Mole-BERT-GIN	random	Random split	mixed	Mixed negatives	3000	0.7675737490357512	0.7567296982726579	0.7784177997988444	5	5	5	3000.0
+molebert_gin	Mole-BERT-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6337308612615786	0.6051012722485046	0.6623604502746526	5	5	5	10.0
+molebert_gin	Mole-BERT-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6777999442169081	0.6480397246794618	0.7075601637543545	5	5	5	30.0
+molebert_gin	Mole-BERT-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.6930795202654101	0.6778019018737402	0.7083571386570799	5	5	5	100.0
+molebert_gin	Mole-BERT-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7252908794644822	0.7044361280868473	0.7461456308421172	5	5	5	300.0
+molebert_gin	Mole-BERT-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7385688700987947	0.7186350099888241	0.7585027302087652	5	5	5	1000.0
+molebert_gin	Mole-BERT-GIN	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7686698668545675	0.750882319954056	0.786457413755079	5	5	5	3000.0
+molformer_c3_1_1b	MolFormer	random	Random split	mixed	Mixed negatives	10	0.6400549850290097	0.5994365386158336	0.6806734314421858	5	5	5	10.0
+molformer_c3_1_1b	MolFormer	random	Random split	mixed	Mixed negatives	30	0.6844191292330978	0.6626823087856151	0.7061559496805805	5	5	5	30.0
+molformer_c3_1_1b	MolFormer	random	Random split	mixed	Mixed negatives	100	0.7051293281516766	0.6937724289598277	0.7164862273435255	5	5	5	100.0
+molformer_c3_1_1b	MolFormer	random	Random split	mixed	Mixed negatives	300	0.7262362674524457	0.7167451709241194	0.7357273639807721	5	5	5	300.0
+molformer_c3_1_1b	MolFormer	random	Random split	mixed	Mixed negatives	1000	0.7525667845091378	0.7447280902111406	0.760405478807135	5	5	5	1000.0
+molformer_c3_1_1b	MolFormer	random	Random split	mixed	Mixed negatives	3000	0.7790767340940083	0.7663337740472889	0.7918196941407278	5	5	5	3000.0
+molformer_c3_1_1b	MolFormer	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.631190381820584	0.5853630579748836	0.6770177056662843	5	5	5	10.0
+molformer_c3_1_1b	MolFormer	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.674945464687835	0.6392938827497017	0.7105970466259683	5	5	5	30.0
+molformer_c3_1_1b	MolFormer	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.7053545896272809	0.6923198577708519	0.7183893214837099	5	5	5	100.0
+molformer_c3_1_1b	MolFormer	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7263296193537969	0.7101073264081617	0.7425519122994322	5	5	5	300.0
+molformer_c3_1_1b	MolFormer	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7328232116381146	0.7078474715006934	0.7577989517755358	5	5	5	1000.0
+molformer_c3_1_1b	MolFormer	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7451867999588966	0.7178787379673385	0.7724948619504547	5	5	5	3000.0
+morgan_r2_2048	Morgan r2	random	Random split	mixed	Mixed negatives	10	0.6340844298045181	0.5995269127092161	0.66864194689982	5	5	5	10.0
+morgan_r2_2048	Morgan r2	random	Random split	mixed	Mixed negatives	30	0.7109234487019658	0.6928939861253179	0.7289529112786136	5	5	5	30.0
+morgan_r2_2048	Morgan r2	random	Random split	mixed	Mixed negatives	100	0.7607902635552355	0.7417430321978203	0.7798374949126506	5	5	5	100.0
+morgan_r2_2048	Morgan r2	random	Random split	mixed	Mixed negatives	300	0.7942977161470995	0.7773065641398004	0.8112888681543987	5	5	5	300.0
+morgan_r2_2048	Morgan r2	random	Random split	mixed	Mixed negatives	1000	0.824584084320127	0.8103329167059675	0.8388352519342864	5	5	5	1000.0
+morgan_r2_2048	Morgan r2	random	Random split	mixed	Mixed negatives	3000	0.8515596518102285	0.8348448840532897	0.8682744195671673	5	5	5	3000.0
+morgan_r2_2048	Morgan r2	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6665716152141042	0.6443528669289139	0.6887903634992946	5	5	5	10.0
+morgan_r2_2048	Morgan r2	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.70813368858355	0.6857000270550166	0.7305673501120833	5	5	5	30.0
+morgan_r2_2048	Morgan r2	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.7468464937390819	0.7302712942318742	0.7634216932462895	5	5	5	100.0
+morgan_r2_2048	Morgan r2	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7756671951380631	0.7611679888669565	0.7901664014091698	5	5	5	300.0
+morgan_r2_2048	Morgan r2	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7917504881020536	0.7745528534356394	0.8089481227684678	5	5	5	1000.0
+morgan_r2_2048	Morgan r2	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.8313319681155591	0.8137476227286556	0.8489163135024625	5	5	5	3000.0
+morgan_r3_2048	Morgan r3	random	Random split	mixed	Mixed negatives	10	0.6392739343908689	0.6020209712687824	0.6765268975129554	5	5	5	10.0
+morgan_r3_2048	Morgan r3	random	Random split	mixed	Mixed negatives	30	0.7154786512581848	0.6991851455602022	0.7317721569561674	5	5	5	30.0
+morgan_r3_2048	Morgan r3	random	Random split	mixed	Mixed negatives	100	0.7656592171214022	0.7485339086169481	0.7827845256258562	5	5	5	100.0
+morgan_r3_2048	Morgan r3	random	Random split	mixed	Mixed negatives	300	0.7965572206237731	0.7818668928493183	0.8112475483982279	5	5	5	300.0
+morgan_r3_2048	Morgan r3	random	Random split	mixed	Mixed negatives	1000	0.8235215278818699	0.8104257575692152	0.8366172981945247	5	5	5	1000.0
+morgan_r3_2048	Morgan r3	random	Random split	mixed	Mixed negatives	3000	0.8494536959518003	0.8351438269600815	0.8637635649435191	5	5	5	3000.0
+morgan_r3_2048	Morgan r3	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6773592577912831	0.6565762880418344	0.6981422275407319	5	5	5	10.0
+morgan_r3_2048	Morgan r3	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.7169357466860439	0.6963786166384132	0.7374928767336746	5	5	5	30.0
+morgan_r3_2048	Morgan r3	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.7584422571600535	0.7459892866773307	0.7708952276427764	5	5	5	100.0
+morgan_r3_2048	Morgan r3	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.7837316686484345	0.7702830002596932	0.7971803370371757	5	5	5	300.0
+morgan_r3_2048	Morgan r3	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7983662159980037	0.7788200169907911	0.8179124150052164	5	5	5	1000.0
+morgan_r3_2048	Morgan r3	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.8300631963711631	0.8078732948431981	0.8522530978991281	5	5	5	3000.0
+nafm_graph_mean	NaFM	random	Random split	mixed	Mixed negatives	10	0.5770648816030475	0.5371031495586686	0.6170266136474264	5	5	5	10.0
+nafm_graph_mean	NaFM	random	Random split	mixed	Mixed negatives	30	0.6350528097569179	0.5967227180207859	0.6733829014930499	5	5	5	30.0
+nafm_graph_mean	NaFM	random	Random split	mixed	Mixed negatives	100	0.6655289932694523	0.6429336802137349	0.6881243063251696	5	5	5	100.0
+nafm_graph_mean	NaFM	random	Random split	mixed	Mixed negatives	300	0.6993279688808134	0.6883335585281659	0.7103223792334609	5	5	5	300.0
+nafm_graph_mean	NaFM	random	Random split	mixed	Mixed negatives	1000	0.7320794504421835	0.7190618027172467	0.7450970981671202	5	5	5	1000.0
+nafm_graph_mean	NaFM	random	Random split	mixed	Mixed negatives	3000	0.7689271704279985	0.7585322190764712	0.7793221217795259	5	5	5	3000.0
+nafm_graph_mean	NaFM	scaffold	Scaffold-pair split	mixed	Mixed negatives	10	0.6065950294329209	0.5622211302586644	0.6509689286071774	5	5	5	10.0
+nafm_graph_mean	NaFM	scaffold	Scaffold-pair split	mixed	Mixed negatives	30	0.6328397997680598	0.5928769715243486	0.672802628011771	5	5	5	30.0
+nafm_graph_mean	NaFM	scaffold	Scaffold-pair split	mixed	Mixed negatives	100	0.6636672978963902	0.6269260169099201	0.7004085788828603	5	5	5	100.0
+nafm_graph_mean	NaFM	scaffold	Scaffold-pair split	mixed	Mixed negatives	300	0.6876666519869057	0.6640951539290415	0.7112381500447699	5	5	5	300.0
+nafm_graph_mean	NaFM	scaffold	Scaffold-pair split	mixed	Mixed negatives	1000	0.7040703307350157	0.6893025187102825	0.7188381427597489	5	5	5	1000.0
+nafm_graph_mean	NaFM	scaffold	Scaffold-pair split	mixed	Mixed negatives	3000	0.7438502077186182	0.733788212937043	0.7539122025001934	5	5	5	3000.0

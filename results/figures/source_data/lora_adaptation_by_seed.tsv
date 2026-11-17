@@ -1,0 +1,181 @@
+task	feature	adaptation	split_mode	split_seed	metric_value	category
+np_classification	chemberta_77m_mlm	Frozen	random	2026	0.9916992656675908	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	random	2027	0.9928216730827067	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	random	2028	0.9914878735462528	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	random	2029	0.991665815907912	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	random	2030	0.9916059698610248	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	LoRA	random	2026	0.9889832731119752	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	random	2027	0.9898054506681946	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	random	2028	0.9882024391037892	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	random	2029	0.9891495110864732	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	random	2030	0.988132783838512	"ChemBERTa-77M
+LoRA"
+np_classification	molformer_c3_1_1b	Frozen	random	2026	0.9904358845216308	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	random	2027	0.9921386406048556	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	random	2028	0.9897934941749972	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	random	2029	0.9914263790484584	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	random	2030	0.9897403274348326	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	LoRA	random	2026	0.9919855779311052	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	random	2027	0.9912599307261564	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	random	2028	0.9918794331678495	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	random	2029	0.9919846282501752	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	random	2030	0.9917909480123877	"MolFormer
+LoRA"
+np_classification	morgan_r2_2048	Baseline	random	2026	0.9970302264632174	Morgan r2
+np_classification	morgan_r2_2048	Baseline	random	2027	0.9974630469377572	Morgan r2
+np_classification	morgan_r2_2048	Baseline	random	2028	0.9972361447567166	Morgan r2
+np_classification	morgan_r2_2048	Baseline	random	2029	0.9976639685922916	Morgan r2
+np_classification	morgan_r2_2048	Baseline	random	2030	0.99686607063075	Morgan r2
+np_classification	chemberta_77m_mlm	Frozen	scaffold	2026	0.9906906907639202	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	scaffold	2027	0.9882967486394516	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	scaffold	2028	0.986583445887303	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	scaffold	2029	0.988026551701016	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	Frozen	scaffold	2030	0.9890181199673688	"ChemBERTa-77M
+Frozen"
+np_classification	chemberta_77m_mlm	LoRA	scaffold	2026	0.989470583419156	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	scaffold	2027	0.984853717632128	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	scaffold	2028	0.986765749294878	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	scaffold	2029	0.9852933557894568	"ChemBERTa-77M
+LoRA"
+np_classification	chemberta_77m_mlm	LoRA	scaffold	2030	0.9872609782540962	"ChemBERTa-77M
+LoRA"
+np_classification	molformer_c3_1_1b	Frozen	scaffold	2026	0.990499294713155	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	scaffold	2027	0.9849519968414614	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	scaffold	2028	0.985520590623602	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	scaffold	2029	0.986935482680276	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	Frozen	scaffold	2030	0.9875643904443112	"MolFormer
+Frozen"
+np_classification	molformer_c3_1_1b	LoRA	scaffold	2026	0.991443910971894	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	scaffold	2027	0.9877936674547928	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	scaffold	2028	0.986657447864154	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	scaffold	2029	0.9889038356123456	"MolFormer
+LoRA"
+np_classification	molformer_c3_1_1b	LoRA	scaffold	2030	0.9894433591329852	"MolFormer
+LoRA"
+np_classification	morgan_r2_2048	Baseline	scaffold	2026	0.996675604942656	Morgan r2
+np_classification	morgan_r2_2048	Baseline	scaffold	2027	0.9961304383337508	Morgan r2
+np_classification	morgan_r2_2048	Baseline	scaffold	2028	0.995902381925575	Morgan r2
+np_classification	morgan_r2_2048	Baseline	scaffold	2029	0.9948600086225408	Morgan r2
+np_classification	morgan_r2_2048	Baseline	scaffold	2030	0.9960512405562127	Morgan r2
+np_likeness	chemberta_77m_mlm	Frozen	random	2026	0.9399201478647824	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	random	2027	0.9407492900820048	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	random	2028	0.9386352498582348	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	random	2029	0.9395130290084284	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	random	2030	0.9370920063191696	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	LoRA	random	2026	0.9532433926663354	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	random	2027	0.9531623322927808	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	random	2028	0.9513563590569424	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	random	2029	0.9520235837273396	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	random	2030	0.950913107173434	"ChemBERTa-77M
+LoRA"
+np_likeness	molformer_c3_1_1b	Frozen	random	2026	0.943846598756628	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	random	2027	0.943743023319104	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	random	2028	0.9409325696493308	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	random	2029	0.9418293775609556	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	random	2030	0.9402966709017072	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	LoRA	random	2026	0.9532372753926848	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	random	2027	0.953163565671246	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	random	2028	0.951355737642122	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	random	2029	0.9520270145042188	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	random	2030	0.95092024517409	"MolFormer
+LoRA"
+np_likeness	morgan_r2_2048	Baseline	random	2026	0.9418968471434565	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	random	2027	0.942082166983396	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	random	2028	0.9408809473261484	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	random	2029	0.9416371394602012	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	random	2030	0.9402131650363688	Morgan r2
+np_likeness	chemberta_77m_mlm	Frozen	scaffold	2026	0.9331520067424182	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	scaffold	2027	0.9338272030436374	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	scaffold	2028	0.9341024122996808	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	scaffold	2029	0.938280938841808	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	Frozen	scaffold	2030	0.9374446566972818	"ChemBERTa-77M
+Frozen"
+np_likeness	chemberta_77m_mlm	LoRA	scaffold	2026	0.9515457102365008	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	scaffold	2027	0.952377804015338	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	scaffold	2028	0.9513355104536158	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	scaffold	2029	0.9474939656802368	"ChemBERTa-77M
+LoRA"
+np_likeness	chemberta_77m_mlm	LoRA	scaffold	2030	0.9463191801296882	"ChemBERTa-77M
+LoRA"
+np_likeness	molformer_c3_1_1b	Frozen	scaffold	2026	0.94216258326863	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	scaffold	2027	0.9422327765701836	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	scaffold	2028	0.9425398799297392	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	scaffold	2029	0.9393220303585764	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	Frozen	scaffold	2030	0.9375755861938976	"MolFormer
+Frozen"
+np_likeness	molformer_c3_1_1b	LoRA	scaffold	2026	0.9515555978005265	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	scaffold	2027	0.9523864806813503	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	scaffold	2028	0.951328307377358	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	scaffold	2029	0.9474886278829836	"MolFormer
+LoRA"
+np_likeness	molformer_c3_1_1b	LoRA	scaffold	2030	0.9463198521440874	"MolFormer
+LoRA"
+np_likeness	morgan_r2_2048	Baseline	scaffold	2026	0.9245879025341726	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	scaffold	2027	0.9243759996911132	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	scaffold	2028	0.9234526888312298	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	scaffold	2029	0.9363999516036724	Morgan r2
+np_likeness	morgan_r2_2048	Baseline	scaffold	2030	0.9361779936963658	Morgan r2
