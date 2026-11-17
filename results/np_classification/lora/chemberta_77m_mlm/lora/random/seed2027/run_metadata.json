@@ -1,0 +1,43 @@
+{
+  "script_version": "npclassification_lora_repeated_splits_v2",
+  "task": "np_classification",
+  "feature": "chemberta_77m_mlm",
+  "model_name_or_path": "/private/vina/model_repos/ChemBERTa-77M-MLM",
+  "adaptation_mode": "lora",
+  "split_mode": "random",
+  "split_seed": 2027,
+  "split_column": "random_split_2027",
+  "best_epoch": 5,
+  "checkpoint_selection_metric": "validation_macro_auroc",
+  "validation_macro_auroc_at_best_epoch": 0.9878935948120838,
+  "validation_macro_auprc_at_best_epoch": 0.9214694655889264,
+  "hidden_size": 384,
+  "total_parameters": 3466999,
+  "trainable_parameters": 39559,
+  "trainable_fraction": 0.011410156160991105,
+  "lora_target_modules_requested": [
+    "query",
+    "value"
+  ],
+  "lora_linear_modules_matched": [
+    "encoder.layer.0.attention.self.query",
+    "encoder.layer.0.attention.self.value",
+    "encoder.layer.1.attention.self.query",
+    "encoder.layer.1.attention.self.value",
+    "encoder.layer.2.attention.self.query",
+    "encoder.layer.2.attention.self.value"
+  ],
+  "class_weight_mode": "balanced",
+  "class_weights": [
+    0.4730266332626343,
+    1.0047779083251953,
+    4.242980480194092,
+    0.16713444888591766,
+    0.5264911651611328,
+    0.40979674458503723,
+    0.17579247057437897
+  ],
+  "n_train": 62664,
+  "n_validation": 7833,
+  "n_test": 7834
+}

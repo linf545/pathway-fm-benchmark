@@ -1,0 +1,75 @@
+{
+  "script_version": "npclassifier_full_repeated_v2_sparse_lbfgs",
+  "task": "data/tasks/np_classification/npclassifier_label_task.tsv",
+  "embedding_dir": "data/features/bao_plant_pathway/full",
+  "cache_dir": "data/features/np_classification/full",
+  "output_dir": "results/np_classification/full",
+  "features": [
+    "morgan_r2_2048",
+    "morgan_r3_2048",
+    "chemberta_77m_mlm",
+    "chemberta_100m_mlm",
+    "molformer_c3_1_1b",
+    "nafm_graph_mean",
+    "molclr_gcn",
+    "molclr_gin",
+    "graphmvp_gin",
+    "molebert_gin"
+  ],
+  "excluded_features": [
+    "nafm_contrast"
+  ],
+  "split_seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "split_modes": [
+    "random",
+    "scaffold"
+  ],
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "C_selection": "validation_macro_ovr_auroc_then_auprc_then_smaller_C",
+  "classifier": {
+    "type": "single-label multiclass LogisticRegression",
+    "class_weight": "balanced",
+    "dense_solver": "lbfgs",
+    "sparse_solver": "lbfgs",
+    "dense_max_iter": 500,
+    "sparse_max_iter": 1000,
+    "tol": 0.001,
+    "parallel_split_seed_runs": 4,
+    "morgan_representation": "scipy CSR; no scaling",
+    "dense_scaler": "training-fitted StandardScaler",
+    "rdkit_imputer": "training-fitted median"
+  },
+  "metrics": {
+    "primary": "auroc_ovr_macro",
+    "secondary": "auprc_ovr_macro",
+    "supplementary": [
+      "macro_f1",
+      "weighted_f1",
+      "accuracy",
+      "balanced_accuracy"
+    ],
+    "score_source": "multiclass predict_proba"
+  },
+  "n_compounds": 78331,
+  "n_classes": 7,
+  "label_names": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "save_predictions": false
+}

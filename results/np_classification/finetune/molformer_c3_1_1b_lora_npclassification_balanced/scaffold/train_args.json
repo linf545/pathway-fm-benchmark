@@ -1,0 +1,30 @@
+{
+  "task": "data/tasks/np_classification/npclassifier_label_task.tsv",
+  "model_name_or_path": "/private/vina/model_repos/MoLFormer-c3-1.1B",
+  "run_name": "molformer_c3_1_1b_lora_npclassification_balanced",
+  "splits": [
+    "random",
+    "scaffold"
+  ],
+  "epochs": 5.0,
+  "batch_size": 8,
+  "eval_batch_size": 16,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "max_length": 256,
+  "seed": 42,
+  "class_weight_mode": "balanced",
+  "use_lora": true,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.1,
+  "lora_target_modules": [
+    "query",
+    "value"
+  ],
+  "fp16": false,
+  "bf16": false,
+  "trust_remote_code": true,
+  "local_files_only": true,
+  "output_root": "results/np_classification/finetune"
+}

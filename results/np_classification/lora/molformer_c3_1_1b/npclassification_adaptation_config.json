@@ -1,0 +1,90 @@
+{
+  "script_version": "npclassification_lora_repeated_splits_v2",
+  "task_file": "data/tasks/np_classification/npclassifier_label_task.tsv",
+  "output_root": "results/np_classification/lora",
+  "feature_name": "molformer_c3_1_1b",
+  "model_name_or_path": "/private/vina/model_repos/MoLFormer-c3-1.1B",
+  "id_column": "np_task_id",
+  "label_columns": [
+    "label_1",
+    "label_2",
+    "label_3",
+    "label_4",
+    "label_5",
+    "label_6",
+    "label_7"
+  ],
+  "label_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "label_names": [
+    "Alkaloids",
+    "Amino acids and peptides",
+    "Carbohydrates",
+    "Fatty acids",
+    "Polyketides",
+    "Shikimates and phenylpropanoids",
+    "Terpenoids"
+  ],
+  "arguments": {
+    "task_file": "data/tasks/np_classification/npclassifier_label_task.tsv",
+    "output_root": "results/np_classification/lora",
+    "model_name_or_path": "/private/vina/model_repos/MoLFormer-c3-1.1B",
+    "feature_name": "molformer_c3_1_1b",
+    "adaptation_modes": [
+      "lora"
+    ],
+    "split_mode": "both",
+    "split_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "epochs": 5,
+    "train_batch_size": 64,
+    "eval_batch_size": 128,
+    "gradient_accumulation_steps": 1,
+    "lora_learning_rate": 0.0001,
+    "head_learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "max_grad_norm": 1.0,
+    "early_stopping_patience": 2,
+    "max_length": 202,
+    "head_dropout": 0.0,
+    "class_weight_mode": "balanced",
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.1,
+    "lora_target_modules": [
+      "query",
+      "value"
+    ],
+    "precision": "bf16",
+    "gradient_checkpointing": true,
+    "num_workers": 4,
+    "trust_remote_code": true,
+    "local_files_only": true,
+    "skip_predictions": false,
+    "resume": true,
+    "overwrite_feature_results": false,
+    "list_linear_modules_and_exit": false
+  },
+  "environment": {
+    "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "torch": "2.5.1",
+    "transformers": "4.46.3",
+    "peft": "0.19.1",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA H100 PCIe"
+  }
+}

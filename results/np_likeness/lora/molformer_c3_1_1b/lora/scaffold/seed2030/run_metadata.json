@@ -1,0 +1,34 @@
+{
+  "script_version": "np_likeness_lora_repeated_splits_v3",
+  "task": "np_likeness",
+  "feature": "molformer_c3_1_1b",
+  "model_name_or_path": "/private/vina/model_repos/ChemBERTa-77M-MLM",
+  "adaptation_mode": "lora",
+  "split_mode": "scaffold",
+  "split_seed": 2030,
+  "best_epoch": 3,
+  "checkpoint_selection_metric": "validation_auroc",
+  "validation_auprc_at_best_epoch": 0.9555962463134456,
+  "validation_auroc_at_best_epoch": 0.9517674381595247,
+  "tuned_threshold": 0.2,
+  "validation_best_f1_at_tuned_threshold": 0.8886939791760978,
+  "hidden_size": 384,
+  "total_parameters": 3464689,
+  "trainable_parameters": 37249,
+  "trainable_fraction": 0.010751037106072147,
+  "lora_target_modules_requested": [
+    "query",
+    "value"
+  ],
+  "lora_linear_modules_matched": [
+    "encoder.layer.0.attention.self.query",
+    "encoder.layer.0.attention.self.value",
+    "encoder.layer.1.attention.self.query",
+    "encoder.layer.1.attention.self.value",
+    "encoder.layer.2.attention.self.query",
+    "encoder.layer.2.attention.self.value"
+  ],
+  "n_train": 325431,
+  "n_validation": 43678,
+  "n_test": 42339
+}

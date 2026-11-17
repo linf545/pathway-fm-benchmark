@@ -1,0 +1,89 @@
+{
+  "critical_config": {
+    "script_version": "npclassification_label_efficiency_v1",
+    "task": "data/tasks/np_classification/npclassifier_label_task.tsv",
+    "embedding_dir": "data/features/bao_plant_pathway/full",
+    "cache_dir": "data/features/np_classification/full",
+    "features": [
+      "morgan_r2_2048",
+      "morgan_r3_2048",
+      "chemberta_77m_mlm",
+      "chemberta_100m_mlm",
+      "molformer_c3_1_1b",
+      "nafm_graph_mean",
+      "molclr_gcn",
+      "molclr_gin",
+      "graphmvp_gin",
+      "molebert_gin"
+    ],
+    "split_modes": [
+      "random",
+      "scaffold"
+    ],
+    "base_split_seed": 2026,
+    "sample_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "train_sizes": [
+      10,
+      30,
+      100,
+      300,
+      1000,
+      10000
+    ],
+    "C_grid": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "class_weight": "balanced",
+    "dense_solver": "lbfgs",
+    "sparse_solver": "lbfgs",
+    "dense_max_iter": 500,
+    "sparse_max_iter": 1000,
+    "tol": 0.001
+  },
+  "excluded_features": [
+    "nafm_contrast",
+    "rdkit_descriptors"
+  ],
+  "sampling": {
+    "strategy": "nested_class_stratified_total_size; approximately preserves the fixed training-pool class distribution; at least one compound per class",
+    "fixed_validation_and_test": true,
+    "sample_identity": "InChIKey SHA256",
+    "same_samples_across_representations": true,
+    "full_data_endpoint": "Use results/np_classification/full/npclassification_repeated_runs.tsv separately."
+  },
+  "model_selection": {
+    "primary": "validation_macro_ovr_auroc",
+    "secondary": "validation_macro_ovr_auprc",
+    "prefer_converged_candidates": true,
+    "final_tie_break": "smaller_C"
+  },
+  "metrics": {
+    "primary": "auroc_ovr_macro",
+    "secondary": "auprc_ovr_macro",
+    "supplementary": [
+      "macro_f1",
+      "weighted_f1",
+      "accuracy",
+      "balanced_accuracy"
+    ]
+  },
+  "n_compounds": 78331,
+  "n_classes": 7,
+  "label_names": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ]
+}
