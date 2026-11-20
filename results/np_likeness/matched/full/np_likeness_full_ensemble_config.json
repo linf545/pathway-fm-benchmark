@@ -1,0 +1,49 @@
+{
+  "script_version": "np_likeness_full_ensemble_repeated_splits_v2_auroc_tuning",
+  "task_file": "data/tasks/np_likeness_matched/np_likeness_task.tsv",
+  "split_dir": "data/splits/np_likeness_matched",
+  "feature_dir": "data/features/np_likeness_matched",
+  "split_modes": [
+    "random",
+    "scaffold"
+  ],
+  "split_seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "individual_features": [
+    "morgan_r2_2048",
+    "morgan_r3_2048",
+    "chemberta_77m_mlm",
+    "chemberta_100m_mlm",
+    "molformer_c3_1_1b",
+    "nafm_graph_mean",
+    "molclr_gcn",
+    "molclr_gin",
+    "graphmvp_gin",
+    "molebert_gin",
+    "mw_logp_rings"
+  ],
+  "C_grid": [
+    0.01,
+    0.1
+  ],
+  "threshold_grid": [
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "max_iter": 2000,
+  "tol": 0.001,
+  "class_weight": "balanced",
+  "primary_metrics": [
+    "auroc",
+    "auprc",
+    "f1",
+    "balanced_accuracy"
+  ]
+}

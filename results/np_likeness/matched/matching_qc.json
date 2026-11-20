@@ -1,0 +1,33 @@
+{
+  "original_task": "data/tasks/np_likeness/np_likeness_task.tsv",
+  "matching_method": "coarsened_exact_matching_without_replacement",
+  "mw_bin_width_Da": 25.0,
+  "logp_bin_width": 0.5,
+  "ring_count_matching": "exact",
+  "sampling_seed": 2026,
+  "split_seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "n_original": 411448,
+  "n_matched": 228986,
+  "original_by_class": {
+    "1": 205724,
+    "0": 205724
+  },
+  "matched_by_class": {
+    "0": 114493,
+    "1": 114493
+  },
+  "matched_bin_count": 3096,
+  "retained_fraction": 0.5565369135346386,
+  "split_fraction_targets": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "descriptor_feature_stem": "mw_logp_rings"
+}
