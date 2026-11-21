@@ -1,0 +1,121 @@
+task	split_mode	reference	seed	k	weighting	fp	n_train	n_test	n_labels	n_valid_labels	skipped_labels	auroc	pct_zero_sim
+kegg	random	train	2026	1	tanimoto	morgan_r2_2048	4235	541	11	11		0.8478143160891133	0.0
+kegg	random	train	2026	5	tanimoto	morgan_r2_2048	4235	541	11	11		0.9217926441951227	0.0
+kegg	random	train	2026	10	tanimoto	morgan_r2_2048	4235	541	11	11		0.9359255479195748	0.0
+kegg	random	train	2027	1	tanimoto	morgan_r2_2048	4234	536	11	11		0.8665279941550067	0.0
+kegg	random	train	2027	5	tanimoto	morgan_r2_2048	4234	536	11	11		0.948952837004712	0.0
+kegg	random	train	2027	10	tanimoto	morgan_r2_2048	4234	536	11	11		0.9580167667142582	0.0
+kegg	random	train	2028	1	tanimoto	morgan_r2_2048	4244	527	11	11		0.8554546678857625	0.0
+kegg	random	train	2028	5	tanimoto	morgan_r2_2048	4244	527	11	11		0.9273081804945774	0.0
+kegg	random	train	2028	10	tanimoto	morgan_r2_2048	4244	527	11	11		0.9518788646011462	0.0
+kegg	random	train	2029	1	tanimoto	morgan_r2_2048	4241	519	11	11		0.8548698507217765	0.0
+kegg	random	train	2029	5	tanimoto	morgan_r2_2048	4241	519	11	11		0.9442907327659114	0.0
+kegg	random	train	2029	10	tanimoto	morgan_r2_2048	4241	519	11	11		0.9577835981309224	0.0
+kegg	random	train	2030	1	tanimoto	morgan_r2_2048	4222	535	11	11		0.8603684919659553	0.0
+kegg	random	train	2030	5	tanimoto	morgan_r2_2048	4222	535	11	11		0.947976704220144	0.0
+kegg	random	train	2030	10	tanimoto	morgan_r2_2048	4222	535	11	11		0.957138907766896	0.0
+kegg	scaffold	train	2026	1	tanimoto	morgan_r2_2048	4229	516	11	11		0.7899301275162055	0.0
+kegg	scaffold	train	2026	5	tanimoto	morgan_r2_2048	4229	516	11	11		0.8841790214760817	0.0
+kegg	scaffold	train	2026	10	tanimoto	morgan_r2_2048	4229	516	11	11		0.9078313586411678	0.0
+kegg	scaffold	train	2027	1	tanimoto	morgan_r2_2048	4240	524	11	11		0.807511708822359	0.0
+kegg	scaffold	train	2027	5	tanimoto	morgan_r2_2048	4240	524	11	11		0.8911145918499831	0.0
+kegg	scaffold	train	2027	10	tanimoto	morgan_r2_2048	4240	524	11	11		0.9094750748485886	0.0
+kegg	scaffold	train	2028	1	tanimoto	morgan_r2_2048	4237	524	11	11		0.7982153044073964	0.0
+kegg	scaffold	train	2028	5	tanimoto	morgan_r2_2048	4237	524	11	11		0.9220658745619804	0.0
+kegg	scaffold	train	2028	10	tanimoto	morgan_r2_2048	4237	524	11	11		0.9298947786699134	0.0
+kegg	scaffold	train	2029	1	tanimoto	morgan_r2_2048	4235	515	11	11		0.8461378925720061	0.0
+kegg	scaffold	train	2029	5	tanimoto	morgan_r2_2048	4235	515	11	11		0.9454436581821274	0.0
+kegg	scaffold	train	2029	10	tanimoto	morgan_r2_2048	4235	515	11	11		0.9547192912784944	0.0
+kegg	scaffold	train	2030	1	tanimoto	morgan_r2_2048	4235	525	11	11		0.817464500202007	0.0
+kegg	scaffold	train	2030	5	tanimoto	morgan_r2_2048	4235	525	11	11		0.9308583342839672	0.0
+kegg	scaffold	train	2030	10	tanimoto	morgan_r2_2048	4235	525	11	11		0.9516280148693884	0.0
+np_classification	random	train	2026	1	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9792449218147	0.0
+np_classification	random	train	2026	5	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9931099731912505	0.0
+np_classification	random	train	2026	10	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9952112739830213	0.0
+np_classification	random	train	2027	1	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9740755138088072	0.0
+np_classification	random	train	2027	5	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9937070634829086	0.0
+np_classification	random	train	2027	10	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9957959224630757	0.0
+np_classification	random	train	2028	1	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9771051305101286	0.0
+np_classification	random	train	2028	5	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9919489700755569	0.0
+np_classification	random	train	2028	10	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9940753440771447	0.0
+np_classification	random	train	2029	1	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9798774588496302	0.0
+np_classification	random	train	2029	5	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9944517864606348	0.0
+np_classification	random	train	2029	10	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9963234370572677	0.0
+np_classification	random	train	2030	1	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9800394907896048	0.0
+np_classification	random	train	2030	5	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9951158715368168	0.0
+np_classification	random	train	2030	10	tanimoto	morgan_r2_2048	62664	7834	7	7		0.9964201447394495	0.0
+np_classification	scaffold	train	2026	1	tanimoto	morgan_r2_2048	62665	7806	7	7		0.9721259256808431	0.0
+np_classification	scaffold	train	2026	5	tanimoto	morgan_r2_2048	62665	7806	7	7		0.9908287074482792	0.0
+np_classification	scaffold	train	2026	10	tanimoto	morgan_r2_2048	62665	7806	7	7		0.9934476306246041	0.0
+np_classification	scaffold	train	2027	1	tanimoto	morgan_r2_2048	62665	7819	7	7		0.9703115863786668	0.0
+np_classification	scaffold	train	2027	5	tanimoto	morgan_r2_2048	62665	7819	7	7		0.9884509257369556	0.0
+np_classification	scaffold	train	2027	10	tanimoto	morgan_r2_2048	62665	7819	7	7		0.9922203975097696	0.0
+np_classification	scaffold	train	2028	1	tanimoto	morgan_r2_2048	62749	7749	7	7		0.9594614621582618	0.0
+np_classification	scaffold	train	2028	5	tanimoto	morgan_r2_2048	62749	7749	7	7		0.9848328838052226	0.0
+np_classification	scaffold	train	2028	10	tanimoto	morgan_r2_2048	62749	7749	7	7		0.9891741710099667	0.0
+np_classification	scaffold	train	2029	1	tanimoto	morgan_r2_2048	62742	7756	7	7		0.9683105775407871	0.0
+np_classification	scaffold	train	2029	5	tanimoto	morgan_r2_2048	62742	7756	7	7		0.9865910521738587	0.0
+np_classification	scaffold	train	2029	10	tanimoto	morgan_r2_2048	62742	7756	7	7		0.9887579977510681	0.0
+np_classification	scaffold	train	2030	1	tanimoto	morgan_r2_2048	62665	7833	7	7		0.9596537768733108	0.0
+np_classification	scaffold	train	2030	5	tanimoto	morgan_r2_2048	62665	7833	7	7		0.9807393198644865	0.0
+np_classification	scaffold	train	2030	10	tanimoto	morgan_r2_2048	62665	7833	7	7		0.9840482026881942	0.0
+np_likeness	random	train	2026	1	tanimoto	morgan_r2_2048	329158	41145	1	1		0.8695341462907268	0.0
+np_likeness	random	train	2026	5	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9449488456990519	0.0
+np_likeness	random	train	2026	10	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9499225967589895	0.0
+np_likeness	random	train	2027	1	tanimoto	morgan_r2_2048	329158	41145	1	1		0.8703361766282645	0.0
+np_likeness	random	train	2027	5	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9467731506720934	0.0
+np_likeness	random	train	2027	10	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9512152104693248	0.0
+np_likeness	random	train	2028	1	tanimoto	morgan_r2_2048	329158	41145	1	1		0.8700210106257775	0.0
+np_likeness	random	train	2028	5	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9446774445483203	0.0
+np_likeness	random	train	2028	10	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9499221620048945	0.0
+np_likeness	random	train	2029	1	tanimoto	morgan_r2_2048	329158	41145	1	1		0.8673963150942302	0.0
+np_likeness	random	train	2029	5	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9467853356007209	0.0
+np_likeness	random	train	2029	10	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9516712805102508	0.0
+np_likeness	random	train	2030	1	tanimoto	morgan_r2_2048	329158	41145	1	1		0.8698987502133485	0.0
+np_likeness	random	train	2030	5	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9443028330117366	0.0
+np_likeness	random	train	2030	10	tanimoto	morgan_r2_2048	329158	41145	1	1		0.9490535268674581	0.0
+np_likeness	scaffold	train	2026	1	tanimoto	morgan_r2_2048	325434	43678	1	1		0.834849022133061	0.0
+np_likeness	scaffold	train	2026	5	tanimoto	morgan_r2_2048	325434	43678	1	1		0.896492110331511	0.0
+np_likeness	scaffold	train	2026	10	tanimoto	morgan_r2_2048	325434	43678	1	1		0.9065693080963227	0.0
+np_likeness	scaffold	train	2027	1	tanimoto	morgan_r2_2048	325434	43678	1	1		0.8365272384397807	0.0
+np_likeness	scaffold	train	2027	5	tanimoto	morgan_r2_2048	325434	43678	1	1		0.8973917062880253	0.0
+np_likeness	scaffold	train	2027	10	tanimoto	morgan_r2_2048	325434	43678	1	1		0.9072622498709166	0.0
+np_likeness	scaffold	train	2028	1	tanimoto	morgan_r2_2048	325430	43677	1	1		0.8375910470024062	0.0
+np_likeness	scaffold	train	2028	5	tanimoto	morgan_r2_2048	325430	43677	1	1		0.8982250648342579	0.0
+np_likeness	scaffold	train	2028	10	tanimoto	morgan_r2_2048	325430	43677	1	1		0.9080543508065168	0.0
+np_likeness	scaffold	train	2029	1	tanimoto	morgan_r2_2048	325433	42334	1	1		0.8405303200427657	0.0
+np_likeness	scaffold	train	2029	5	tanimoto	morgan_r2_2048	325433	42334	1	1		0.9067303694224957	0.0
+np_likeness	scaffold	train	2029	10	tanimoto	morgan_r2_2048	325433	42334	1	1		0.9177358985972293	0.0
+np_likeness	scaffold	train	2030	1	tanimoto	morgan_r2_2048	325431	42339	1	1		0.8395836581122457	0.0
+np_likeness	scaffold	train	2030	5	tanimoto	morgan_r2_2048	325431	42339	1	1		0.906840691261251	0.0
+np_likeness	scaffold	train	2030	10	tanimoto	morgan_r2_2048	325431	42339	1	1		0.9183884913403282	0.0
+pmn	random	train	2026	1	tanimoto	morgan_r2_2048	1609	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7598636461911932	0.0
+pmn	random	train	2026	5	tanimoto	morgan_r2_2048	1609	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8103878223631512	0.0
+pmn	random	train	2026	10	tanimoto	morgan_r2_2048	1609	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8344195487356846	0.0
+pmn	random	train	2027	1	tanimoto	morgan_r2_2048	1596	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7589465979788946	0.0
+pmn	random	train	2027	5	tanimoto	morgan_r2_2048	1596	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8437454437956624	0.0
+pmn	random	train	2027	10	tanimoto	morgan_r2_2048	1596	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8550648968673482	0.0
+pmn	random	train	2028	1	tanimoto	morgan_r2_2048	1586	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7698621325439625	0.0
+pmn	random	train	2028	5	tanimoto	morgan_r2_2048	1586	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8265485993115541	0.0
+pmn	random	train	2028	10	tanimoto	morgan_r2_2048	1586	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8465844639982504	0.0
+pmn	random	train	2029	1	tanimoto	morgan_r2_2048	1612	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7767647543727284	0.0
+pmn	random	train	2029	5	tanimoto	morgan_r2_2048	1612	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8327845540169323	0.0
+pmn	random	train	2029	10	tanimoto	morgan_r2_2048	1612	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8563619044168219	0.0
+pmn	random	train	2030	1	tanimoto	morgan_r2_2048	1606	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7791470543185043	0.0
+pmn	random	train	2030	5	tanimoto	morgan_r2_2048	1606	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8453928373822761	0.0
+pmn	random	train	2030	10	tanimoto	morgan_r2_2048	1606	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8615536241804062	0.0
+pmn	scaffold	train	2026	1	tanimoto	morgan_r2_2048	1618	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7373748508418371	0.0
+pmn	scaffold	train	2026	5	tanimoto	morgan_r2_2048	1618	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7920000096336264	0.0
+pmn	scaffold	train	2026	10	tanimoto	morgan_r2_2048	1618	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8240807377878798	0.0
+pmn	scaffold	train	2027	1	tanimoto	morgan_r2_2048	1611	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7385368357878566	0.0
+pmn	scaffold	train	2027	5	tanimoto	morgan_r2_2048	1611	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7972414067475133	0.0
+pmn	scaffold	train	2027	10	tanimoto	morgan_r2_2048	1611	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8052509817407166	0.0
+pmn	scaffold	train	2028	1	tanimoto	morgan_r2_2048	1608	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7033432006334004	0.0
+pmn	scaffold	train	2028	5	tanimoto	morgan_r2_2048	1608	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7360017163525987	0.0
+pmn	scaffold	train	2028	10	tanimoto	morgan_r2_2048	1608	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7805694804709689	0.0
+pmn	scaffold	train	2029	1	tanimoto	morgan_r2_2048	1609	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7736821945924797	0.0
+pmn	scaffold	train	2029	5	tanimoto	morgan_r2_2048	1609	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8408230063034638	0.0
+pmn	scaffold	train	2029	10	tanimoto	morgan_r2_2048	1609	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8538536958168994	0.0
+pmn	scaffold	train	2030	1	tanimoto	morgan_r2_2048	1611	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.7360404049937079	0.0
+pmn	scaffold	train	2030	5	tanimoto	morgan_r2_2048	1611	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.798282619414123	0.0
+pmn	scaffold	train	2030	10	tanimoto	morgan_r2_2048	1611	417	18	17	label_15_Phenylpropanoid_Derivative_Degradation	0.8168752513289355	0.0
