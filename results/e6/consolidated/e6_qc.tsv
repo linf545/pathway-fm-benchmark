@@ -1,0 +1,6 @@
+task	split_qc_rows	conditions	settings_checked	status
+np_likeness	30	2	n_train|n_eval|C_grid|threshold_grid|tol|class_weight|solver|C_selection_metric|threshold_strategy	PASS
+np_classification	30	2	n_train|n_eval|n_classes|C_grid|tol|split_column|max_iter	PASS
+kegg_pathway	30	2	n_train|n_eval|n_labels|C_grid|threshold_grid|C_selection_metric|threshold_strategy	PASS
+pmn_secondary_pathway	30	2	n_train|n_eval|n_labels|C_grid|threshold_grid|C_selection_metric|threshold_strategy	PASS
+plantcyc_reaction_neighbor	180	6	n_train|n_eval|n_test|n_validation|C_grid|threshold_grid|class_weight|solver|C_selection_metric|source_pair_file	PASS

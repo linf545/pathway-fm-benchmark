@@ -70,6 +70,8 @@ DEFAULT_FEATURES = [
     "molclr_gin",
     "graphmvp_gin",
     "molebert_gin",
+    "chemeleon",
+    "moljepa_cls",
 ]
 
 FM_FEATURES = {
@@ -81,6 +83,8 @@ FM_FEATURES = {
     "molclr_gin",
     "graphmvp_gin",
     "molebert_gin",
+    "chemeleon",
+    "moljepa_cls",
 }
 
 OVERALL_METRICS = [
