@@ -1,0 +1,119 @@
+{
+  "cli_options": [
+    "--output-dir",
+    "results/e6/np_classification/label_efficiency",
+    "--features",
+    "chemeleon",
+    "moljepa_cls",
+    "--split-modes",
+    "random",
+    "scaffold",
+    "--base-split-seed",
+    "2026",
+    "--sample-seeds",
+    "2026",
+    "2027",
+    "2028",
+    "2029",
+    "2030",
+    "--train-sizes",
+    "10",
+    "30",
+    "100",
+    "300",
+    "1000",
+    "10000",
+    "--C-grid",
+    "0.01",
+    "0.1",
+    "1.0",
+    "--class-weight",
+    "balanced",
+    "--dense-solver",
+    "lbfgs",
+    "--sparse-solver",
+    "lbfgs",
+    "--dense-max-iter",
+    "500",
+    "--sparse-max-iter",
+    "1000",
+    "--tol",
+    "0.001",
+    "--parallel-runs",
+    "2"
+  ],
+  "e6_result_directory": "results/e6/np_classification/label_efficiency",
+  "feature_selection": "native_features_argument",
+  "features_evaluated": [
+    "chemeleon",
+    "moljepa_cls"
+  ],
+  "no_morgan_reruns": true,
+  "original_result_directory": "results/np_classification/label_efficiency",
+  "reference_protocol": {
+    "modes": [
+      "random",
+      "scaffold"
+    ],
+    "original_models": 10,
+    "settings": {
+      "C_grid": [
+        0.01,
+        0.1,
+        1.0
+      ],
+      "base_split_seed": 2026,
+      "cache_dir": "data/features/np_classification/full",
+      "class_weight": "balanced",
+      "dense_max_iter": 500,
+      "dense_solver": "lbfgs",
+      "embedding_dir": "data/features/bao_plant_pathway/full",
+      "features": [
+        "morgan_r2_2048",
+        "morgan_r3_2048",
+        "chemberta_77m_mlm",
+        "chemberta_100m_mlm",
+        "molformer_c3_1_1b",
+        "nafm_graph_mean",
+        "molclr_gcn",
+        "molclr_gin",
+        "graphmvp_gin",
+        "molebert_gin"
+      ],
+      "sample_seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "script_version": "npclassification_label_efficiency_v1",
+      "sparse_max_iter": 1000,
+      "sparse_solver": "lbfgs",
+      "split_modes": [
+        "random",
+        "scaffold"
+      ],
+      "task": "data/tasks/np_classification/npclassifier_label_task.tsv",
+      "tol": 0.001,
+      "train_sizes": [
+        10,
+        30,
+        100,
+        300,
+        1000,
+        10000
+      ]
+    },
+    "sizes": [
+      10,
+      30,
+      100,
+      300,
+      1000,
+      10000
+    ]
+  },
+  "source_evaluator": "src/modeling/np_classification/data_efficiency/run_npclassification_label_efficiency.py",
+  "source_sha256": "5c30ec8eb3788b23ccd4732281f3b95540dcf5a8d5f86ba27fd672e037e1512b"
+}

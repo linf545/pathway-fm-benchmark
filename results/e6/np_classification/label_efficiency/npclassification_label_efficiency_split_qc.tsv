@@ -1,0 +1,7 @@
+task	split	split_column	split_seed	eval_set	n_rows	class_count_min	class_count_max	class_counts	n_scaffolds
+np_classification	random	random_split_2026	2026	train	62664	763	19370	6844|3222|763|19370|6149|7900|18416	17111
+np_classification	random	random_split_2026	2026	validation	7833	95	2421	856|403|95|2421|769|987|2302	3523
+np_classification	random	random_split_2026	2026	test	7834	95	2421	856|403|95|2421|769|988|2302	3533
+np_classification	scaffold	scaffold_split_2026	2026	train	62665	720	19209	7011|3181|720|19209|6410|7917|18217	15856
+np_classification	scaffold	scaffold_split_2026	2026	validation	7860	171	2614	809|428|171|2614|648|831|2359	2013
+np_classification	scaffold	scaffold_split_2026	2026	test	7806	62	2444	736|419|62|2389|629|1127|2444	2204

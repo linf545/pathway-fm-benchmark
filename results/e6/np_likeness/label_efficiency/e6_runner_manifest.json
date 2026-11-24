@@ -1,0 +1,134 @@
+{
+  "cli_options": [
+    "--output-dir",
+    "results/e6/np_likeness/label_efficiency",
+    "--fm-patterns",
+    "chemeleon",
+    "moljepa_cls",
+    "--split-mode",
+    "both",
+    "--base-split-seed",
+    "2026",
+    "--sample-seeds",
+    "2026",
+    "2027",
+    "2028",
+    "2029",
+    "2030",
+    "--train-sizes",
+    "3",
+    "10",
+    "30",
+    "100",
+    "300",
+    "1000",
+    "3000",
+    "10000",
+    "30000",
+    "100000",
+    "--C-grid",
+    "0.01",
+    "0.1",
+    "--threshold-grid",
+    "0.2",
+    "0.4",
+    "0.6",
+    "0.8",
+    "--max-iter",
+    "2000",
+    "--tol",
+    "0.001",
+    "--class-weight",
+    "balanced"
+  ],
+  "e6_result_directory": "results/e6/np_likeness/label_efficiency",
+  "feature_selection": "in_memory_filter_of_native_specifications",
+  "features_evaluated": [
+    "chemeleon",
+    "moljepa_cls"
+  ],
+  "no_morgan_reruns": true,
+  "original_result_directory": "results/np_likeness/label_efficiency",
+  "reference_protocol": {
+    "modes": [
+      "random",
+      "scaffold"
+    ],
+    "original_models": 10,
+    "settings": {
+      "C_grid": [
+        0.01,
+        0.1
+      ],
+      "base_split_seed": 2026,
+      "class_weight": "balanced",
+      "feature_dir": "data/features/np_likeness",
+      "fm_patterns": [
+        "chemberta_77m_mlm",
+        "chemberta_100m_mlm",
+        "molformer_c3_1_1b",
+        "nafm_graph_mean",
+        "molclr_gcn",
+        "molclr_gin",
+        "graphmvp_gin",
+        "molebert_gin"
+      ],
+      "fp_radii": [
+        2,
+        3
+      ],
+      "max_iter": 2000,
+      "n_bits": 2048,
+      "probability_ensembles_included": false,
+      "sample_seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "sampling_strategy": "nested_class_balanced",
+      "script_version": "np_likeness_label_efficiency_v2_auroc_tuning",
+      "split_dir": "data/splits/np_likeness",
+      "split_modes": [
+        "random",
+        "scaffold"
+      ],
+      "task_file": "data/tasks/np_likeness/np_likeness_task.tsv",
+      "threshold_grid": [
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "tol": 0.001,
+      "train_sizes": [
+        3,
+        10,
+        30,
+        100,
+        300,
+        1000,
+        3000,
+        10000,
+        30000,
+        100000
+      ],
+      "validation_and_test_fixed": true
+    },
+    "sizes": [
+      3,
+      10,
+      30,
+      100,
+      300,
+      1000,
+      3000,
+      10000,
+      30000,
+      100000
+    ]
+  },
+  "source_evaluator": "src/modeling/np_likeness/run_np_likeness_label_efficiency.py",
+  "source_sha256": "fe79ae2e3bc7fbd3590567b5bc52504b8de69f99c7cca1e8873fcc9e51754578"
+}

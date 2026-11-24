@@ -1,0 +1,55 @@
+{
+  "script_version": "np_likeness_label_efficiency_v2_auroc_tuning",
+  "task_file": "data/tasks/np_likeness/np_likeness_task.tsv",
+  "split_dir": "data/splits/np_likeness",
+  "feature_dir": "data/features/np_likeness",
+  "split_modes": [
+    "random",
+    "scaffold"
+  ],
+  "base_split_seed": 2026,
+  "sample_seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "train_sizes": [
+    3,
+    10,
+    30,
+    100,
+    300,
+    1000,
+    3000,
+    10000,
+    30000,
+    100000
+  ],
+  "fm_patterns": [
+    "chemeleon",
+    "moljepa_cls"
+  ],
+  "fp_radii": [
+    2,
+    3
+  ],
+  "n_bits": 2048,
+  "C_grid": [
+    0.01,
+    0.1
+  ],
+  "threshold_grid": [
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "max_iter": 2000,
+  "tol": 0.001,
+  "class_weight": "balanced",
+  "sampling_strategy": "nested_class_balanced",
+  "validation_and_test_fixed": true,
+  "probability_ensembles_included": false
+}

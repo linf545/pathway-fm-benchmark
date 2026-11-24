@@ -72,7 +72,7 @@ DEFAULT_TRAIN_SIZES = [100, 300, 1000, 3000, 10000, 30000]
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(DEFAULT_TRAIN_SIZES
+    parser = argparse.ArgumentParser(
         description=(
             "Fixed-validation/test label-efficiency benchmark for "
             "single-label NPClassifier prediction."

@@ -1,0 +1,89 @@
+{
+  "cli_options": [
+    "--output-dir",
+    "results/e6/kegg_pathway/data_efficiency",
+    "--fm-patterns",
+    "chemeleon",
+    "moljepa_cls",
+    "--split-mode",
+    "both",
+    "--split-seeds",
+    "2026",
+    "2027",
+    "2028",
+    "2029",
+    "2030",
+    "--sampling-seeds",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "--n-per-label",
+    "4",
+    "8",
+    "16",
+    "24",
+    "32",
+    "64",
+    "--C-grid",
+    "0.01",
+    "0.1",
+    "1.0",
+    "--threshold-grid",
+    "0.2",
+    "0.4",
+    "0.6",
+    "0.8"
+  ],
+  "e6_result_directory": "results/e6/kegg_pathway/data_efficiency",
+  "feature_selection": "in_memory_filter_of_native_specifications",
+  "features_evaluated": [
+    "chemeleon",
+    "moljepa_cls"
+  ],
+  "no_morgan_reruns": true,
+  "original_result_directory": "results/kegg_pathway/data_efficiency",
+  "reference_protocol": {
+    "C_grid": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "modes": [
+      "random",
+      "scaffold"
+    ],
+    "original_models": 10,
+    "sampling_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sizes": [
+      4,
+      8,
+      16,
+      24,
+      32,
+      64
+    ],
+    "split_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "threshold_grid": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ]
+  },
+  "source_evaluator": "src/modeling/kegg_pathway/data_efficiency/run_kegg_pathway_data_efficiency.py",
+  "source_sha256": "61175c2b581f12d1f0dc7897c1e57f484898356b1fbeeef34e49e833e7e0b100"
+}
